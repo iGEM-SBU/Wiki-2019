@@ -9,8 +9,82 @@
       integrity="sha384-vk5WoKIaW/vJyUAd9n/wmopsmNhiy+L2Z+SBxGYnUkunIxVxAv/UtMOhba/xskxh"
       crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+
+    <script>
+    $(document)
+      .ready(function() {
+        $('.ui.menu .ui.dropdown').dropdown({
+          on: 'hover'
+        });
+        $('.ui.menu a.item')
+          .on('click', function() {
+            $(this)
+              .addClass('active')
+              .siblings()
+              .removeClass('active');
+          });
+      });
+    </script>
+
   </head>
   <body>
-    <h1>There are 6 headings in HTML</h1>
+    <div class="ui container">
+      <div class="ui top green fixed stackable labeled icon menu">
+        <a class="item" style="margin-left:5%;border-left:1.5px solid #E9E9E9">
+          <i class="green leaf icon"></i>
+          iGEM SBU
+        </a>
+        <a class="right item">
+          <i class="home icon"></i>
+          Home
+        </a>
+        <div class="ui dropdown item" style="border-left:1.5px solid #E9E9E9">
+          <i class="users icon"></i>
+          Team
+          <div class="menu">
+            <a class="item">Team Members</a>
+            <a class="item">Collaborations</a>
+            <a class="item">Attributions</a>
+          </div>
+        </div>
+        <div class="ui dropdown item">
+          <i class="lightbulb icon"></i>
+          Project
+          <div class="menu">
+            <a class="item">Description</a>
+            <a class="item">Design</a>
+            <a class="item">Experiments</a>
+            <a class="item">Notebook</a>
+            <a class="item">Model</a>
+            <a class="item">Results</a>
+            <a class="item">Wiki</a>
+          </div>
+        </div>
+        <div class="ui dropdown item">
+          <i class="cogs icon"></i>
+          Parts
+          <div class="menu">
+            <a class="item">Parts Overview</a>
+            <a class="item">Basic Parts</a>
+          </div>
+        </div>
+        <a class="item">
+          <i class="shield alternate icon"></i>
+          Safety
+        </a>
+        <div class="ui dropdown item">
+          <i class="globe icon"></i>
+          Human Practices
+          <div class="menu">
+            <a class="item">Integrated Human Practices</a>
+            <a class="item">Education & Engagement</a>
+          </div>
+        </div>
+        <a class="item" style="margin-right:5%">
+          <i class="trophy icon"></i>
+          Awards
+        </a>
+      </div>
+    </div>
   </body>
 </html>
