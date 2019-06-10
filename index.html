@@ -2,14 +2,82 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="shortcut icon" type="image/ico" href="favicon.ico"/>
+    <link rel="shortcut icon" type="image/ico" href="media/favicon.ico"/>
     <title>iGEM SBU 2019</title>
+
+    <!-- Semantic UI -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha384-vk5WoKIaW/vJyUAd9n/wmopsmNhiy+L2Z+SBxGYnUkunIxVxAv/UtMOhba/xskxh"
       crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+
+    <!-- For responsive navbar -->
+    <link rel="stylesheet" href="addons/hamburger.css" type="text/css" media="all">
+    <script type="text/javascript" src="addons/hamburger.js"></script>
+    <meta name="viewport" content="width=device-width, maximum-scale=2, user-scalable=yes" />
+
+    <!-- Styles -->
+    <style>
+      @media screen and (min-width: 0px) {
+        html, .ui {
+          font-size: calc(8px + 6 * ((100vw - 320px) / 680));
+        }
+      }
+      @media screen and (min-width: 1000px) {
+        html, .ui {
+          font-size: 14px;
+        }
+      }
+
+      .ui.mobile.menu, .ui.mobile.menu > .item {
+        font-size: 14px;
+      }
+
+      @font-face {
+        font-family: exo;
+        src: url(media/exo2.ttf);
+      }
+
+      *, .ui.header {
+        font-family: exo;
+      }
+
+      .leftedge {
+        margin-left: 5%;
+      }
+
+      .rightedge {
+        margin-right: 5%
+      }
+
+      .bordered {
+        border-left: 1.5px solid #E9E9E9;
+      }
+
+      .ui.container > h3.ui.header {
+        font-size: 2em;
+      }
+
+      h1.ui.header {
+        padding-top: 3em;
+        margin-bottom: 0;
+        font-size: 6em;
+      }
+
+      h2.ui.header {
+        margin-top: 0em;
+        font-size: 3em;
+        margin-bottom: 1em;
+      }
+
+      img.ui.image {
+        max-width: 33%;
+        padding-bottom: 6em;
+      }
+
+    </style>
 
     <script>
     $(document)
@@ -29,17 +97,18 @@
 
   </head>
   <body>
-    <div class="ui container">
-      <div class="ui top green fixed stackable labeled icon menu">
-        <a class="item" style="margin-left:5%;border-left:1.5px solid #E9E9E9">
+    <!-- Computer Menu-->
+    <div class="ui container computer">
+      <div class="ui top green stackable fixed labeled icon computer menu">
+        <a class="ui item leftedge bordered">
           <i class="green leaf icon"></i>
           iGEM SBU
         </a>
-        <a class="right item">
+        <a class="right ui item">
           <i class="home icon"></i>
           Home
         </a>
-        <div class="ui dropdown item" style="border-left:1.5px solid #E9E9E9">
+        <div class="ui dropdown item bordered">
           <i class="users icon"></i>
           Team
           <div class="menu">
@@ -69,7 +138,7 @@
             <a class="item">Basic Parts</a>
           </div>
         </div>
-        <a class="item">
+        <a class="ui item">
           <i class="shield alternate icon"></i>
           Safety
         </a>
@@ -81,11 +150,104 @@
             <a class="item">Education & Engagement</a>
           </div>
         </div>
-        <a class="item" style="margin-right:5%">
+        <a class="ui item rightedge">
           <i class="trophy icon"></i>
           Awards
         </a>
+        <div class="hamburger ">
+    	    <span class="hamburger-bun"></span>
+    	    <span class="hamburger-patty"></span>
+    	    <span class="hamburger-bun"></span>
+        </div>
       </div>
     </div>
+
+    <!-- Mobile Menu -->
+    <div class="ui container mobile">
+      <div class="ui top green fixed stackable mobile menu">
+        <a class="ui item ">
+          <i class="green leaf icon"></i>
+          iGEM SBU
+        </a>
+        <a class="ui item">
+          <i class="home icon"></i>
+          Home
+        </a>
+        <div class="ui dropdown item">
+          <i class="users icon"></i>
+          Team
+          <div class="menu">
+            <a class="item">Team Members</a>
+            <a class="item">Collaborations</a>
+            <a class="item">Attributions</a>
+          </div>
+        </div>
+        <div class="ui dropdown item">
+          <i class="lightbulb icon"></i>
+          Project
+          <div class="menu">
+            <a class="item">Description</a>
+            <a class="item">Design</a>
+            <a class="item">Experiments</a>
+            <a class="item">Notebook</a>
+            <a class="item">Model</a>
+            <a class="item">Results</a>
+            <a class="item">Wiki</a>
+          </div>
+        </div>
+        <div class="ui dropdown item">
+          <i class="cogs icon"></i>
+          Parts
+          <div class="menu">
+            <a class="item">Parts Overview</a>
+            <a class="item">Basic Parts</a>
+          </div>
+        </div>
+        <a class="ui item">
+          <i class="shield alternate icon"></i>
+          Safety
+        </a>
+        <div class="ui dropdown item">
+          <i class="globe icon"></i>
+          Human Practices
+          <div class="menu">
+            <a class="item">Integrated Human Practices</a>
+            <a class="item">Education & Engagement</a>
+          </div>
+        </div>
+        <a class="ui item">
+          <i class="trophy icon"></i>
+          Awards
+        </a>
+        <div class="hamburger ">
+    	    <span class="hamburger-bun"></span>
+    	    <span class="hamburger-patty"></span>
+    	    <span class="hamburger-bun"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <div class="ui fluid container" style="background-color: #21BA45">
+      <div class="ui center aligned container">
+        <h1 class="ui inverted header">
+          The Viral Countdown
+        </h1>
+        <h2 class="ui inverted header">
+          Stony Brook University
+        </h2>
+        <img class="ui centered large image" src="media/logo.png">
+      </div>
+    </div>
+
+    <!-- Topics -->
+    <div class="ui container fluid topic" style="background-color: #09868b">
+      <div class="ui container">
+        <h3 class="ui inverted header">
+          The Problem
+        </h3>
+      </div>
+    </div>
+
   </body>
 </html>
