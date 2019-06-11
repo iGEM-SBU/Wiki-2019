@@ -6,12 +6,12 @@
     <title>iGEM SBU 2019</title>
 
     <!-- Semantic UI -->
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha384-vk5WoKIaW/vJyUAd9n/wmopsmNhiy+L2Z+SBxGYnUkunIxVxAv/UtMOhba/xskxh"
       crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <script src="semantic/dist/semantic.min.js"></script>
 
     <!-- For responsive navbar -->
     <link rel="stylesheet" href="addons/hamburger.css" type="text/css" media="all">
@@ -20,11 +20,12 @@
 
     <!-- Styles -->
     <style>
-      @media screen and (min-width: 0px) {
+      @media screen and (min-width: 767px) {
         html, .ui {
-          font-size: calc(8px + 6 * ((100vw - 320px) / 680));
+          font-size: calc(12px + 2 * ((100vw - 768px) / 232));
         }
       }
+
       @media screen and (min-width: 1000px) {
         html, .ui {
           font-size: 14px;
@@ -44,32 +45,23 @@
         font-family: exo;
       }
 
-      .leftedge {
-        margin-left: 5%;
-      }
-
-      .rightedge {
-        margin-right: 5%
-      }
-
       .bordered {
         border-left: 1.5px solid #E9E9E9;
       }
 
-      .ui.container > h3.ui.header {
-        font-size: 2em;
-      }
-
       h1.ui.header {
-        padding-top: 3em;
-        margin-bottom: 0;
+        padding: 3em 0em 0em;
         font-size: 6em;
       }
 
       h2.ui.header {
-        margin-top: 0em;
+        padding: 0em 0em 1em;
         font-size: 3em;
-        margin-bottom: 1em;
+      }
+
+      h3.ui.header {
+        padding: 1em 0em;
+        font-size: 2em;
       }
 
       img.ui.image {
@@ -77,6 +69,29 @@
         padding-bottom: 6em;
       }
 
+      p {
+        font-size: 1.35em;
+        line-height: 1.6;
+      }
+
+      /* Mobile */
+      @media only screen and (min-width: 320px) and (max-width: 767px){
+        html, .ui {
+          font-size: 11px;
+        }
+
+        h1.ui.header {
+          font-size: 4em;
+        }
+
+        h2.ui.header {
+          font-size: 2em;
+        }
+
+        img.ui.image {
+          max-width: 66%;
+        }
+      }
     </style>
 
     <script>
@@ -100,7 +115,7 @@
     <!-- Computer Menu-->
     <div class="ui container computer">
       <div class="ui top green stackable fixed labeled icon computer menu">
-        <a class="ui item leftedge bordered">
+        <a class="ui item bordered">
           <i class="green leaf icon"></i>
           iGEM SBU
         </a>
@@ -150,7 +165,7 @@
             <a class="item">Education & Engagement</a>
           </div>
         </div>
-        <a class="ui item rightedge">
+        <a class="ui item">
           <i class="trophy icon"></i>
           Awards
         </a>
@@ -242,12 +257,31 @@
 
     <!-- Topics -->
     <div class="ui container fluid topic" style="background-color: #09868b">
-      <div class="ui container">
+      <div class="ui container computer" style="padding:1.5em">
+        <div class="ui grid">
+          <div class="ten wide column">
+            <h3 class="ui inverted header">
+              The Problem
+            </h3>
+            <p style="color: white">
+              What the fuck did you just fucking say about me, you little bitch? I'll have you know I graduated top of my class in the Navy Seals, and I've been involved in numerous secret raids on Al-Quaeda, and I have over 300 confirmed kills. I am trained in gorilla warfare and I'm the top sniper in the entire US armed forces. You are nothing to me but just another target. I will wipe you the fuck out with precision the likes of which has never been seen before on this Earth, mark my fucking words. You think you can get away with saying that shit to me over the Internet? Think again, fucker. As we speak I am contacting my secret network of spies across the USA and your IP is being traced right now so you better prepare for the storm, maggot. The storm that wipes out the pathetic little thing you call your life. You're fucking dead, kid. I can be anywhere, anytime, and I can kill you in over seven hundred ways, and that's just with my bare hands. Not only am I extensively trained in unarmed combat, but I have access to the entire arsenal of the United States Marine Corps and I will use it to its full extent to wipe your miserable ass off the face of the continent, you little shit. If only you could have known what unholy retribution your little "clever" comment was about to bring down upon you, maybe you would have held your fucking tongue. But you couldn't, you didn't, and now you're paying the price, you goddamn idiot. I will shit fury all over you and you will drown in it. You're fucking dead, kiddo.
+            </p>
+          </div>
+          <div class="six wide column">
+            <img class="ui centered image" src="media/frog.jpg" style="max-width:50%; max-height:50%; margin-top:30%">
+          </div>
+        </div>
+      </div>
+
+      <div class="ui container mobile">
         <h3 class="ui inverted header">
           The Problem
         </h3>
+        <p style="color: white">
+          What the fuck did you just fucking say about me, you little bitch? I'll have you know I graduated top of my class in the Navy Seals, and I've been involved in numerous secret raids on Al-Quaeda, and I have over 300 confirmed kills. I am trained in gorilla warfare and I'm the top sniper in the entire US armed forces. You are nothing to me but just another target. I will wipe you the fuck out with precision the likes of which has never been seen before on this Earth, mark my fucking words. You think you can get away with saying that shit to me over the Internet? Think again, fucker. As we speak I am contacting my secret network of spies across the USA and your IP is being traced right now so you better prepare for the storm, maggot. The storm that wipes out the pathetic little thing you call your life. You're fucking dead, kid. I can be anywhere, anytime, and I can kill you in over seven hundred ways, and that's just with my bare hands. Not only am I extensively trained in unarmed combat, but I have access to the entire arsenal of the United States Marine Corps and I will use it to its full extent to wipe your miserable ass off the face of the continent, you little shit. If only you could have known what unholy retribution your little "clever" comment was about to bring down upon you, maybe you would have held your fucking tongue. But you couldn't, you didn't, and now you're paying the price, you goddamn idiot. I will shit fury all over you and you will drown in it. You're fucking dead, kiddo.
+        </p>
+        <img class="ui centered image" src="media/frog.jpg" style="max-width:50%; max-height:50%; margin-top:10%">
       </div>
     </div>
-
   </body>
 </html>
