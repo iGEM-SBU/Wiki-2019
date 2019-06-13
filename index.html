@@ -18,81 +18,8 @@
     <script type="text/javascript" src="addons/hamburger.js"></script>
     <meta name="viewport" content="width=device-width, maximum-scale=2, user-scalable=yes" />
 
-    <!-- Styles -->
-    <style>
-      @media screen and (min-width: 767px) {
-        html, .ui {
-          font-size: calc(12px + 2 * ((100vw - 768px) / 232));
-        }
-      }
-
-      @media screen and (min-width: 1000px) {
-        html, .ui {
-          font-size: 14px;
-        }
-      }
-
-      .ui.mobile.menu, .ui.mobile.menu > .item {
-        font-size: 14px;
-      }
-
-      @font-face {
-        font-family: exo;
-        src: url(media/exo2.ttf);
-      }
-
-      *, .ui.header {
-        font-family: exo;
-      }
-
-      .bordered {
-        border-left: 1.5px solid #E9E9E9;
-      }
-
-      h1.ui.header {
-        padding: 3em 0em 0em;
-        font-size: 6em;
-      }
-
-      h2.ui.header {
-        padding: 0em 0em 1em;
-        font-size: 3em;
-      }
-
-      h3.ui.header {
-        padding: 1em 0em;
-        font-size: 2em;
-      }
-
-      img.ui.image {
-        max-width: 33%;
-        padding-bottom: 6em;
-      }
-
-      p {
-        font-size: 1.35em;
-        line-height: 1.6;
-      }
-
-      /* Mobile */
-      @media only screen and (min-width: 320px) and (max-width: 767px){
-        html, .ui {
-          font-size: 11px;
-        }
-
-        h1.ui.header {
-          font-size: 4em;
-        }
-
-        h2.ui.header {
-          font-size: 2em;
-        }
-
-        img.ui.image {
-          max-width: 66%;
-        }
-      }
-    </style>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
 
     <script>
     $(document)
@@ -243,7 +170,7 @@
     </div>
 
     <!-- Header -->
-    <div class="ui fluid container" style="background-color: #21BA45">
+    <div class="ui fluid container" style="background-color: #5CDB95">
       <div class="ui center aligned container">
         <h1 class="ui inverted header">
           The Viral Countdown
@@ -251,37 +178,144 @@
         <h2 class="ui inverted header">
           Stony Brook University
         </h2>
-        <img class="ui centered large image" src="media/logo.png">
+        <img class="ui centered large image" id="logo" src="media/logo.png">
       </div>
     </div>
 
-    <!-- Topics -->
-    <div class="ui container fluid topic" style="background-color: #09868b">
+    <!-- Problem -->
+    <div class="ui container fluid topic" style="background-color: #379683">
       <div class="ui container computer" style="padding:1.5em">
-        <div class="ui grid">
-          <div class="ten wide column">
+        <div class="ui middle aligned grid">
+          <div class="eight wide column">
             <h3 class="ui inverted header">
               The Problem
             </h3>
-            <p style="color: white">
+            <p>
               What the fuck did you just fucking say about me, you little bitch? I'll have you know I graduated top of my class in the Navy Seals, and I've been involved in numerous secret raids on Al-Quaeda, and I have over 300 confirmed kills. I am trained in gorilla warfare and I'm the top sniper in the entire US armed forces. You are nothing to me but just another target. I will wipe you the fuck out with precision the likes of which has never been seen before on this Earth, mark my fucking words. You think you can get away with saying that shit to me over the Internet? Think again, fucker. As we speak I am contacting my secret network of spies across the USA and your IP is being traced right now so you better prepare for the storm, maggot. The storm that wipes out the pathetic little thing you call your life. You're fucking dead, kid. I can be anywhere, anytime, and I can kill you in over seven hundred ways, and that's just with my bare hands. Not only am I extensively trained in unarmed combat, but I have access to the entire arsenal of the United States Marine Corps and I will use it to its full extent to wipe your miserable ass off the face of the continent, you little shit. If only you could have known what unholy retribution your little "clever" comment was about to bring down upon you, maybe you would have held your fucking tongue. But you couldn't, you didn't, and now you're paying the price, you goddamn idiot. I will shit fury all over you and you will drown in it. You're fucking dead, kiddo.
             </p>
           </div>
-          <div class="six wide column">
-            <img class="ui centered image" src="media/frog.jpg" style="max-width:50%; max-height:50%; margin-top:30%">
+          <div class="four wide column">
+            <div class="ui vertical segment">
+              <img class="ui centered image section" src="media/frog.gif">
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="ui container mobile">
+      <div class="ui container mobile" style="padding:2.5em">
         <h3 class="ui inverted header">
           The Problem
         </h3>
-        <p style="color: white">
+        <p>
           What the fuck did you just fucking say about me, you little bitch? I'll have you know I graduated top of my class in the Navy Seals, and I've been involved in numerous secret raids on Al-Quaeda, and I have over 300 confirmed kills. I am trained in gorilla warfare and I'm the top sniper in the entire US armed forces. You are nothing to me but just another target. I will wipe you the fuck out with precision the likes of which has never been seen before on this Earth, mark my fucking words. You think you can get away with saying that shit to me over the Internet? Think again, fucker. As we speak I am contacting my secret network of spies across the USA and your IP is being traced right now so you better prepare for the storm, maggot. The storm that wipes out the pathetic little thing you call your life. You're fucking dead, kid. I can be anywhere, anytime, and I can kill you in over seven hundred ways, and that's just with my bare hands. Not only am I extensively trained in unarmed combat, but I have access to the entire arsenal of the United States Marine Corps and I will use it to its full extent to wipe your miserable ass off the face of the continent, you little shit. If only you could have known what unholy retribution your little "clever" comment was about to bring down upon you, maybe you would have held your fucking tongue. But you couldn't, you didn't, and now you're paying the price, you goddamn idiot. I will shit fury all over you and you will drown in it. You're fucking dead, kiddo.
         </p>
-        <img class="ui centered image" src="media/frog.jpg" style="max-width:50%; max-height:50%; margin-top:10%">
+        <img class="ui centered section image" src="media/frog.gif">
       </div>
+    </div>
+
+    <!-- Solution -->
+    <div class="ui container fluid topic" style="background-color: #1E6777">
+      <div class="ui container computer" style="padding:1.5em">
+        <div class="ui middle aligned grid">
+          <div class="four wide column">
+            <img class="ui centered section image" src="media/frog.gif">
+          </div>
+          <div class="eight wide column">
+            <h3 class="ui inverted header">
+              The Solution
+            </h3>
+            <p>
+              👌👀👌👀👌👀👌👀👌👀 good shit go౦ԁ sHit👌 thats ✔ some good👌👌shit right👌👌there👌👌👌 right✔there ✔✔if i do ƽaү so my self 💯 i say so 💯 thats what im talking about right there right there (chorus: ʳᶦᵍʰᵗ ᵗʰᵉʳᵉ) mMMMMᎷМ💯 👌👌 👌НO0ОଠOOOOOОଠଠOoooᵒᵒᵒᵒᵒᵒᵒᵒᵒ👌 👌👌 👌 💯 👌 👀 👀 👀 👌👌Good shit
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ui container mobile" style="padding:2.5em">
+        <h3 class="ui inverted header">
+          The Problem
+        </h3>
+        <p>
+          👌👀👌👀👌👀👌👀👌👀 good shit go౦ԁ sHit👌 thats ✔ some good👌👌shit right👌👌there👌👌👌 right✔there ✔✔if i do ƽaү so my self 💯 i say so 💯 thats what im talking about right there right there (chorus: ʳᶦᵍʰᵗ ᵗʰᵉʳᵉ) mMMMMᎷМ💯 👌👌 👌НO0ОଠOOOOOОଠଠOoooᵒᵒᵒᵒᵒᵒᵒᵒᵒ👌 👌👌 👌 💯 👌 👀 👀 👀 👌👌Good shit
+        </p>
+        <img class="ui centered section image" src="media/frog.gif">
+      </div>
+    </div>
+
+    <!-- Future -->
+    <div class="ui container fluid topic" style="background-color: #05386b">
+      <div class="ui container computer" style="padding:1.5em">
+        <div class="ui middle aligned grid">
+          <div class="eight wide column">
+            <h3 class="ui inverted header">
+              Future of Plant Virus Research
+            </h3>
+            <p>
+              Infinite poop. You sit on the toilet to poop, but the poop never stops coming out of your butt. You have to start flushing the toilet every two minutes to keep up. You try to pinch your butt closed but that makes your insides hurt. The poop accelerates. You call 911. The paramedics call for doctors. The doctors call for specialists. The story trends on Twitter. You turn down talk show appearances. Your septic tank fails. People form a cult. Your toilet is finished. Volunteers arrive with buckets and shovels. You are completely used to the smell. The poop accelerates. You are moved to a stepladder with a hole in the top step. The poop accelerates. The shovelers abandon the buckets and shovel directly out the window. The poop accelerates. A candlelight vigil forms around your house. One of the workers falls over and can't free himself. The poop accelerates. A priest knocks over the stepladder and tackles you out the window. You land in the pile. The poop accelerates. The force now propels you forward and upward. Vigil goers grab at your legs. The poop ignites from their candles. The Facebook live event hits 1 million viewers. The poop accelerates. You are 30 feet in the air. The fire engulfs the vigil and your house. 60 feet. The poop accelerates. The torrent underneath you is deafening. 5 million Facebook live viewers. You try to close up shop but your butthole disintegrated long ago. 120 feet up. Your house explodes. The poop accelerates. 1000 feet. You are now tracked on radar. You try to change your angle of ascent but you should have thought of that way earlier. The poop accelerates. 4,000 feet. NORAD upgrades to DEFCON 3. Concentric circles of fire engulf your city. The poop accelerates. You have broken the sound barrier. 30,000 feet. You no longer take in enough oxygen to sustain consciousness. 60,000 feet. CNN is reporting on all the world records you've broken. 200,000 feet. You are no longer alive. The poop accelerates. Your body disintegrates but your poop contrail remains. NASA can no longer track you. You break the light-speed barrier and we can no longer bear witness. The poop accelerates. Forever.
+            </p>
+          </div>
+          <div class="four wide column">
+            <img class="ui centered section image" src="media/frog.gif">
+          </div>
+        </div>
+      </div>
+
+      <div class="ui container mobile" style="padding:2.5em">
+        <h3 class="ui inverted header">
+          The Problem
+        </h3>
+        <p>
+          Infinite poop. You sit on the toilet to poop, but the poop never stops coming out of your butt. You have to start flushing the toilet every two minutes to keep up. You try to pinch your butt closed but that makes your insides hurt. The poop accelerates. You call 911. The paramedics call for doctors. The doctors call for specialists. The story trends on Twitter. You turn down talk show appearances. Your septic tank fails. People form a cult. Your toilet is finished. Volunteers arrive with buckets and shovels. You are completely used to the smell. The poop accelerates. You are moved to a stepladder with a hole in the top step. The poop accelerates. The shovelers abandon the buckets and shovel directly out the window. The poop accelerates. A candlelight vigil forms around your house. One of the workers falls over and can't free himself. The poop accelerates. A priest knocks over the stepladder and tackles you out the window. You land in the pile. The poop accelerates. The force now propels you forward and upward. Vigil goers grab at your legs. The poop ignites from their candles. The Facebook live event hits 1 million viewers. The poop accelerates. You are 30 feet in the air. The fire engulfs the vigil and your house. 60 feet. The poop accelerates. The torrent underneath you is deafening. 5 million Facebook live viewers. You try to close up shop but your butthole disintegrated long ago. 120 feet up. Your house explodes. The poop accelerates. 1000 feet. You are now tracked on radar. You try to change your angle of ascent but you should have thought of that way earlier. The poop accelerates. 4,000 feet. NORAD upgrades to DEFCON 3. Concentric circles of fire engulf your city. The poop accelerates. You have broken the sound barrier. 30,000 feet. You no longer take in enough oxygen to sustain consciousness. 60,000 feet. CNN is reporting on all the world records you've broken. 200,000 feet. You are no longer alive. The poop accelerates. Your body disintegrates but your poop contrail remains. NASA can no longer track you. You break the light-speed barrier and we can no longer bear witness. The poop accelerates. Forever.
+        </p>
+        <img class="ui centered section image" src="media/frog.gif">
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="ui container fluid topic" style="background-color: #2D2D2D">
+      <div class="ui container computer" style="padding:1.5em">
+        <div class="ui middle aligned grid">
+          <div class="six wide column">
+            <img class="ui large centered image" id="footerlogo" src="media/logo.png">
+          </div>
+          <div class="six wide column"  style="text-align:center">
+            <p><u>iGEM Stony Brook 2019</u></p>
+            <button class="ui facebook icon button">
+              <i class="facebook icon"></i>
+            </button>
+            <button class="ui twitter icon button">
+              <i class="twitter icon"></i>
+            </button>
+            <button class="ui instagram icon button">
+              <i class="instagram icon"></i>
+            </button>
+            <button class="ui red icon button">
+              <i class="envelope icon"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="ui container mobile" style="padding:2.5em">
+        <div style="text-align:center">
+          <img class="ui small centered image" src="media/logo.png">
+
+          <p><u>iGEM Stony Brook 2019</u></p>
+          <button class="ui facebook icon button">
+            <i class="facebook icon"></i>
+          </button>
+          <button class="ui twitter icon button">
+            <i class="twitter icon"></i>
+          </button>
+          <button class="ui instagram icon button">
+            <i class="instagram icon"></i>
+          </button>
+          <button class="ui red icon button">
+            <i class="envelope icon"></i>
+          </button>
+        </div>
+      </div>
+
     </div>
   </body>
 </html>

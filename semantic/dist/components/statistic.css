@@ -332,12 +332,12 @@
 .ui.olive.statistics .statistic > .value,
 .ui.statistics .olive.statistic > .value,
 .ui.olive.statistic > .value {
-  color: #B5CC18;
+  color: #379683;
 }
 .ui.green.statistics .statistic > .value,
 .ui.statistics .green.statistic > .value,
 .ui.green.statistic > .value {
-  color: #21BA45;
+  color: #5CDB95;
 }
 .ui.teal.statistics .statistic > .value,
 .ui.statistics .teal.statistic > .value,
@@ -347,7 +347,7 @@
 .ui.blue.statistics .statistic > .value,
 .ui.statistics .blue.statistic > .value,
 .ui.blue.statistic > .value {
-  color: #2185D0;
+  color: #05386B;
 }
 .ui.violet.statistics .statistic > .value,
 .ui.statistics .violet.statistic > .value,
@@ -410,7 +410,7 @@
 .ui.inverted.green.statistics .statistic > .value,
 .ui.statistics .inverted.green.statistic > .value,
 .ui.inverted.green.statistic > .value {
-  color: #2ECC40;
+  color: #8EE4AF;
 }
 .ui.inverted.teal.statistics .statistic > .value,
 .ui.statistics .inverted.teal.statistic > .value,

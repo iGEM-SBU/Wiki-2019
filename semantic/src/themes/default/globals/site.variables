@@ -51,8 +51,8 @@
     Brand Colors
 --------------------*/
 
-@primaryColor        : @green;
-@secondaryColor      : @lightblue;
+@primaryColor        : @blue;
+@secondaryColor      : @black;
 
 @lightPrimaryColor   : @lightBlue;
 @lightSecondaryColor : @lightBlack;
@@ -196,7 +196,7 @@
         Grid
 --------------------*/
 
-@columnCount: 12;
+@columnCount: 16;
 
 /*-------------------
      Transitions

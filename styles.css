@@ -1,0 +1,82 @@
+@media screen and (min-width: 767px) {
+  html, .ui {
+    font-size: calc(12px + 2 * ((100vw - 768px) / 232));
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  html, .ui {
+    font-size: 14px;
+  }
+}
+
+.ui.mobile.menu, .ui.mobile.menu > .item {
+  font-size: 14px;
+}
+
+@font-face {
+  font-family: Rubik;
+  src: url(media/Rubik.ttf);
+}
+
+*, .ui.header {
+  font-family: Rubik;
+}
+
+.bordered {
+  border-left: 1.5px solid #E9E9E9;
+}
+
+h1.ui.header {
+  padding: 3em 0em 0em;
+  font-size: 6em;
+}
+
+h2.ui.header {
+  padding: 0em 0em 1em;
+  font-size: 3em;
+}
+
+h3.ui.header {
+  padding: 0.5em 0em;
+  font-size: 2em;
+}
+
+#logo {
+  max-width: 33%;
+  padding-bottom: 6em;
+}
+
+#footerlogo {
+  max-width: 50%;
+  margin: auto;
+}
+
+img.ui.image.section {
+  max-width: 60%;
+}
+
+p {
+  font-size: 1.35em;
+  line-height: 1.6;
+  color: white;
+}
+
+/* Mobile */
+@media only screen and (min-width: 320px) and (max-width: 767px){
+  html, .ui {
+    font-size: 11px;
+  }
+
+  h1.ui.header {
+    font-size: 4em;
+  }
+
+  h2.ui.header {
+    font-size: 2em;
+  }
+
+  img.ui.image.section {
+    max-width: 40%;
+  }
+}

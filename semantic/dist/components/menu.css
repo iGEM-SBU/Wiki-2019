@@ -1334,13 +1334,13 @@ Floated Menu / Item
 }
 .ui.menu .olive.active.item,
 .ui.olive.menu .active.item {
-  border-color: #B5CC18 !important;
-  color: #B5CC18 !important;
+  border-color: #379683 !important;
+  color: #379683 !important;
 }
 .ui.menu .green.active.item,
 .ui.green.menu .active.item {
-  border-color: #21BA45 !important;
-  color: #21BA45 !important;
+  border-color: #5CDB95 !important;
+  color: #5CDB95 !important;
 }
 .ui.menu .teal.active.item,
 .ui.teal.menu .active.item {
@@ -1349,8 +1349,8 @@ Floated Menu / Item
 }
 .ui.menu .blue.active.item,
 .ui.blue.menu .active.item {
-  border-color: #2185D0 !important;
-  color: #2185D0 !important;
+  border-color: #05386B !important;
+  color: #05386B !important;
 }
 .ui.menu .violet.active.item,
 .ui.violet.menu .active.item {
@@ -1539,7 +1539,7 @@ Floated Menu / Item
 /* Olive */
 .ui.inverted.menu .olive.active.item,
 .ui.inverted.olive.menu {
-  background-color: #B5CC18;
+  background-color: #379683;
 }
 .ui.inverted.olive.menu .item:before {
   background-color: rgba(34, 36, 38, 0.1);
@@ -1551,7 +1551,7 @@ Floated Menu / Item
 /* Green */
 .ui.inverted.menu .green.active.item,
 .ui.inverted.green.menu {
-  background-color: #21BA45;
+  background-color: #5CDB95;
 }
 .ui.inverted.green.menu .item:before {
   background-color: rgba(34, 36, 38, 0.1);
@@ -1575,7 +1575,7 @@ Floated Menu / Item
 /* Blue */
 .ui.inverted.menu .blue.active.item,
 .ui.inverted.blue.menu {
-  background-color: #2185D0;
+  background-color: #05386B;
 }
 .ui.inverted.blue.menu .item:before {
   background-color: rgba(34, 36, 38, 0.1);

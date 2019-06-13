@@ -550,28 +550,28 @@ a.ui.card:hover,
 .ui.olive.cards > .card,
 .ui.cards > .olive.card,
 .ui.olive.card {
-  -webkit-box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 0px 0px #B5CC18, 0px 1px 3px 0px #D4D4D5;
-          box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 0px 0px #B5CC18, 0px 1px 3px 0px #D4D4D5;
+  -webkit-box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 0px 0px #379683, 0px 1px 3px 0px #D4D4D5;
+          box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 0px 0px #379683, 0px 1px 3px 0px #D4D4D5;
 }
 .ui.olive.cards > .card:hover,
 .ui.cards > .olive.card:hover,
 .ui.olive.card:hover {
-  -webkit-box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 0px 0px #a7bd0d, 0px 1px 3px 0px #BCBDBD;
-          box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 0px 0px #a7bd0d, 0px 1px 3px 0px #BCBDBD;
+  -webkit-box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 0px 0px #2c8875, 0px 1px 3px 0px #BCBDBD;
+          box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 0px 0px #2c8875, 0px 1px 3px 0px #BCBDBD;
 }
 
 /* Green */
 .ui.green.cards > .card,
 .ui.cards > .green.card,
 .ui.green.card {
-  -webkit-box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 0px 0px #21BA45, 0px 1px 3px 0px #D4D4D5;
-          box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 0px 0px #21BA45, 0px 1px 3px 0px #D4D4D5;
+  -webkit-box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 0px 0px #5CDB95, 0px 1px 3px 0px #D4D4D5;
+          box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 0px 0px #5CDB95, 0px 1px 3px 0px #D4D4D5;
 }
 .ui.green.cards > .card:hover,
 .ui.cards > .green.card:hover,
 .ui.green.card:hover {
-  -webkit-box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 0px 0px #16ab39, 0px 1px 3px 0px #BCBDBD;
-          box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 0px 0px #16ab39, 0px 1px 3px 0px #BCBDBD;
+  -webkit-box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 0px 0px #40de87, 0px 1px 3px 0px #BCBDBD;
+          box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 0px 0px #40de87, 0px 1px 3px 0px #BCBDBD;
 }
 
 /* Teal */
@@ -592,14 +592,14 @@ a.ui.card:hover,
 .ui.blue.cards > .card,
 .ui.cards > .blue.card,
 .ui.blue.card {
-  -webkit-box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 0px 0px #2185D0, 0px 1px 3px 0px #D4D4D5;
-          box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 0px 0px #2185D0, 0px 1px 3px 0px #D4D4D5;
+  -webkit-box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 0px 0px #05386B, 0px 1px 3px 0px #D4D4D5;
+          box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 0px 0px #05386B, 0px 1px 3px 0px #D4D4D5;
 }
 .ui.blue.cards > .card:hover,
 .ui.cards > .blue.card:hover,
 .ui.blue.card:hover {
-  -webkit-box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 0px 0px #1678c2, 0px 1px 3px 0px #BCBDBD;
-          box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 0px 0px #1678c2, 0px 1px 3px 0px #BCBDBD;
+  -webkit-box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 0px 0px #002b57, 0px 1px 3px 0px #BCBDBD;
+          box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 0px 0px #002b57, 0px 1px 3px 0px #BCBDBD;
 }
 
 /* Violet */
