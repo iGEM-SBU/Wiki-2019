@@ -1,0 +1,90 @@
+{{Stony_Brook}}
+<html>
+  <head>
+    <style>
+      h1.ui.header {
+        padding: 2.5em 0em 1.5em;
+        font-size: 4em;
+      }
+
+      h2.ui.header {
+        padding: 0.5em 0em;
+        font-size: 1.5em;
+      }
+
+      #HQ_page p.black {
+        font-size: 1em;
+        color: #444444;
+      }
+      
+      div.image {
+          margin-bottom: 1em;
+      }
+
+      /* Mobile */
+      @media only screen and (min-width: 300px) and (max-width: 767px){
+        img.ui.image.section {
+          max-width: 40%;
+        }
+
+        #HQ_page p.black, li {
+          font-size: 1.2em;
+        }
+
+        div.ui.text.container {
+          padding-left: 2em;
+          padding-right: 2em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <div class="ui fluid container" style="background-color: #05386b">
+      <div data-aos="zoom-out" data-aos-delay="0" class="ui center aligned container">
+        <h1 class="ui inverted header">
+          Basic Parts
+        </h1>
+      </div>
+    </div>
+
+    <!-- Lab and Equipment -->
+    <div class="ui text container" style="padding-bottom: 2.5em">
+      <h2 class="ui header">Functional Proteins</h2>
+      <h3 class="ui header"><i>XRN1</i></h3>
+      <p class="black">
+        XRN1p is a cytoplasmic protein that plays a key role in RNA degradation. It degrades 5’ monophosphorylated RNA in the 5’-3’ direction. It is present in most Eukaryotes, but is notably absent in plants. The sequence used in this project originates from the yeast <i>Saccharomyces cerevisiae</i>. A point mutation was made at the 2418th base pair to remove an illegal internal BsaI cut site to make the part Type IIs compatible.
+      </p>
+
+      <h2 class="ui header">Promoters</h2>
+      <h3 class="ui header"><i>Double Promoter of CAMV 35s</i></h3>
+      <p class="black">
+        The strong constitutive expression of the 35s CaMV promoter is due to several regulatory subdomains located upstream from the minimal promoter region. 251bp of regulatory subdomains were repeated upstream from the 35s CaMV promoter which should yield increased transgene expression in plants. [1]
+      </p>
+
+      <h3 class="ui header"><i>ASI-35s Minimal Promoter</i></h3>
+      <p class="black">
+        Stress inducible promoter for plants. The As-1 element is responsive to Salicylic acid, jasmonates and other stress signals such as infection by a pathogen. [2] Promoter produced by fusing 38bp As-1 element with 49bp minimal CaMV 35s promoter.
+      </p>
+
+      <h3 class="ui header"><i>HS-35s Minimal Promoter</i></h3>
+      <p class="black">
+        Heat shock inducible promoter for plants. Produced by fusion of a trimer of Heat shock consensus sequence to the 49 bp 35s CaMV minimal promoter. The heat shock consensus sequence of 5’-AGAAG-3’ is conserved throughout plant species and three units allow for efficient binding of heat shock transcription factors. [2]
+      </p>
+
+      <h2 class="ui header">
+          References
+      </h2>
+      <ol>
+        <li>Kay, R., Chan, A., Daly, M., & Mcpherson, J. (1987). Duplication of CaMV 35S Promoter Sequences Creates a Strong Enhancer for Plant Genes. <i>Science</i>, 236(4806), 1299–1302. doi: 10.1126/science.236.4806.1299</li>
+        <li>Yang, Y., Li, R., & Qi, M. (2000). In vivo analysis of plant promoters and transcription factors by agroinfiltration of tobacco leaves. <i>The Plant Journal</i>, 22(6), 543–551. doi: 10.1046/j.1365-313x.2000.00760.x</li>
+      </ol>
+    </div>
+
+    <script>
+      AOS.init();
+    </script>
+
+  </body>
+</html>
+{{Stony_Brook/footer}}

@@ -1,0 +1,162 @@
+{{Stony_Brook}}
+<html>
+  <head>
+    <style>
+      h1.ui.header {
+        padding: 2.5em 0em 1.5em;
+        font-size: 4em;
+      }
+
+      h2.ui.header {
+        padding: 0.5em 0em;
+        font-size: 1.5em;
+      }
+
+      #HQ_page p.black {
+        font-size: 1em;
+        color: #444444;
+      }
+
+      .card {
+        box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+      }
+
+      /* Mobile */
+      @media only screen and (min-width: 300px) and (max-width: 767px){
+        img.ui.image.section {
+          max-width: 40%;
+        }
+
+        #HQ_page p.black, li {
+          font-size: 1.2em;
+        }
+
+        div.ui.text.container {
+          padding-left: 2em;
+          padding-right: 2em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <div class="ui fluid container" style="background-color: #05386b">
+      <div data-aos="zoom-out" data-aos-delay="0" class="ui center aligned container">
+        <h1 class="ui inverted header">
+          Characterization
+        </h1>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="ui text container" style="padding-bottom: 2.5em">
+      <h2 class="ui header">
+        Overview
+      </h2>
+      <p class="black">
+        Characterization is one of the many things that iGEM requires us to do in order to test the validity and usability of the biobricks that are in the registry. Our team selected two promoters to characterize: <a class="link" href="http://parts.igem.org/Part:BBa_K895000">BBa_K895000</a> and <a class="link" href="http://parts.igem.org/Part:BBa_K541503">BBa_K541503</a>, which are both constitutive promoters. All three of these promoters are working in E.coli, which is one of the vectors that we are using, and have minimal data on them, so we wanted to see how they compared to a well known promoter, T7. To quantify this expression we are using Green Fluorescent Protein (GFP).
+      </p>
+
+      <h2 class="ui header">
+        Procedure
+      </h2>
+      <ol class="ui list">
+        <li>Order each promoter (BBa K895000, BBa K541503) ligated to GFP</li>
+        <li>Cut the promoters and the backbones with Ecor1 and Pst1</li>
+        <li>Ligate each ‘Promoter + GFP’ combination and the plasmid backbone (pSB1K3)</li>
+        <li>Transform into bacteria (BL21)</li>
+        <li>Plate the bacteria on Kanamycin Resistant Plates</li>
+      </ol>
+
+      <h2 class="ui header">
+        Data Collection
+      </h2>
+      <p class="black">
+        When successful colonies start growing, data collection can commence.
+      </p>
+      <ol class="ui list">
+        <li>Select a colony and liquid inoculate it in 5mL of LB media with Kanamycin.</li>
+        <li>Starting from hour 0, pipette 100 uL of the liquid inoculate into a 96-well plate.</li>
+          <ol>
+            <li value="a">Leave the liquid inoculate in the incubator, shaking.</li>
+            <li value="b">Every hour, take out another 100uL and put it into the adjacent well and then store the well plate in 4°C.</li>
+              <ol>
+                <li value="i">Row 1 = Hour 0,</li>
+                <li value="ii">Row 2 = Hour 1,</li>
+                <li value="iii">Row 3 = Hour 2, etc.</li>
+              </ol>
+          </ol>
+        <li value="3">After collecting the samples for between 12-18 hours, run it on the microplate reader.</li>
+          <ol>
+            <li value="a">First, collect the OD 620 (Our team’s microplate reader could not record at OD 600).</li>
+            <li value="b">Next, collect the fluorescence from GFP.</li>
+          </ol>
+      </ol>
+
+      <h2 class="ui header">
+        Exploring the Modular Nature of the 35s CaMV Promoter
+      </h2>
+      <p class="black">
+        There are a limited number of promoters available on the registry with respect to plant synthetic biology, and many of the promoters that are available are constitutive. While a constitutive promoter may be useful for demonstrating the potential of a project, it may not be as useful for producing transgenic plants that will be used outside of the lab.
+      </p>
+      
+      <div class="ui centered card" style="width:100%">
+        <div class="image">
+          <img class="ui centered image" src="https://2019.igem.org/wiki/images/5/5b/T--Stony_Brook--improve-1.jpg">
+        </div>
+        <div class="content">
+          <div class="description">
+            <strong>Figure 1.</strong>Modular Organization of the 35s CaMV promoter [1]
+          </div>
+        </div>
+      </div>
+
+      <p class="black">
+        Due to this our team explored a method of developing promoters that would give teams more control over how and when genes are expressed in their plant chassis. The strong constitutive expression offered by the 35s CaMV can be attributed to the regulatory subdomains found upstream from the minimal promoter.[1] The regulatory elements found upstream from the minimal promoter can be modified in order to produce synthetic promoters that enhance or alter the functioning of the 35s promoter.
+      </p>
+
+      <p class="black">
+        We propose three modifications to <a class="link" href="http://parts.igem.org/Part:BBa_K1825004">BBa_K1825004</a>, a version of the 35s CaMV promoter available in the registry.
+      </p>
+
+      <h3 class="ui header"><i><a class="link" href="http://parts.igem.org/Part:BBa_K2930001">BBa_K2930001</a> Double Promoter of CaMV 35s</i></h3>
+
+      <p class="black">
+        For this promoter, 251bp of the regulatory subdomains from BBa_K1825004 were repeated upstream from the 35s CaMV promoter. The repetition of the regulatory elements will enhance transgene expression. [2] This will provide an improved promoter with increased expression of proteins in plant chassis.
+      </p>
+
+      <h3 class="ui header"><i><a class="link" href="http://parts.igem.org/Part:BBa_K2930002">BBa_K2930002</a> AS1-35s Minimal Promoter</i></h3>
+
+      <p class="black">
+        This promoter was designed by fusing 38bp As-1 element with 49bp minimal CaMV 35s promoter region from BBa_K1825004. The As-1 element is responsive to Salicylic acid, jasmonates and other stress signals such as infection by a pathogen. [3] This promoter loses the constitutive nature of the normal 35s promoter, and  instead allows for stress inducible transgene expression.
+      </p>
+
+      <h3 class="ui header"><i><a class="link" href="http://parts.igem.org/Part:BBa_K2930002">BBa_K2930003</a> HS-35s Minimal Promoter</i></h3>
+
+      <p class="black">
+        This promoter was produced by the fusion of a trimer of Heat shock consensus sequence to the 49 bp 35s CaMV minimal promoter. The heat shock consensus sequence of 5’-AGAAG-3’ is conserved throughout plant species and the repetition of three units allow for efficient binding of heat shock transcription factors. [3] This promoter also loses the ability to continuously express transgenes, and instead allows for heat shock inducible transgene expression.
+      </p>
+
+      <h2 class="ui header">
+        Experimental Verification
+      </h2>
+      <p class="black">
+        The fluorescent protein mCherry was placed under control of either BBa-K1825004 or one of our synthetic promoters and the NOS terminator. These constructs were introduced into Nicotiana Benthamiana leaves through agroinfiltration. 48 hours after infiltration the plants were placed at 37oC for 20 hours, and subsequently placed at 22°C for 6 hours, in order to induce the HS-35s promoter. Alternatively the plants were infected with TMV in order to induce the AS1-35s promoter. Our intention was to collect fluorescence measurements before and after each induction method, in order to compare the relative expression levels and inducibility of each promoter. Unfortunately we could not collect data on these biobricks, however by documenting our methods we hope to encourage future iGEM teams working in plant synthetic biology to develop their own synthetic promoters. 
+      </p>
+
+      <h2 class="ui header">References</h2>
+      <ol>
+        <li>Bhullar, S., Datta, S., Advani, S., Chakravarthy, S., Gautam, T., Pental, D., & Burma, P. K. (2007). Functional analysis of cauliflower mosaic virus 35S promoter: re-evaluation of the role of subdomains B5, B4 and B2 in promoter activity. <i>Plant Biotechnology Journal</i>, 5(6), 696–708. doi: 10.1111/j.1467-7652.2007.00274.x</li>
+        <li>Kay, R., Chan, A., Daly, M., & Mcpherson, J. (1987). Duplication of CaMV 35S Promoter Sequences Creates a Strong Enhancer for Plant Genes. <i>Science</i>, 236(4806), 1299–1302. doi: 10.1126/science.236.4806.1299</li>
+        <li>Yang, Y., Li, R., & Qi, M. (2000). In vivo analysis of plant promoters and transcription factors by agroinfiltration of tobacco leaves. <i>The Plant Journal</i>, 22(6), 543–551. doi: 10.1046/j.1365-313x.2000.00760.x</li>
+      </ol>
+    </div>
+
+    <script>
+      AOS.init();
+    </script>
+
+  </body>
+</html>
+{{Stony_Brook/footer}}

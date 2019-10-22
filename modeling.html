@@ -1,0 +1,1169 @@
+{{Stony_Brook}}
+<html>
+  <head>
+    <style>
+      h1.ui.header {
+        padding: 2.5em 0em 1.5em;
+        font-size: 4em;
+      }
+
+      h2.ui.header {
+        padding: 0.5em 0em;
+        font-size: 1.5em;
+      }
+
+      #HQ_page p.black {
+        font-size: 1em;
+        color: #444444;
+      }
+
+      .ui.centered.card {
+        width: 67%;
+      }
+
+      .card {
+        box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+      }
+
+      .buttons {
+        text-align: center;
+        padding-bottom: 1.5em;
+      }
+
+      .ui.buttton.change {
+        font-size: 1.2em;
+        color: white;
+        background-color: #21ba45 !important;
+      }
+
+      span.block > img.latex {
+        display: block;
+        margin: 0 auto;
+      }
+
+      ul.eq {
+        list-style-position: inside;
+        padding-bottom: 1em !important;
+      }
+
+      th, td {
+        text-align: center !important;
+      }
+
+      div.image {
+        padding-top: 1.5em;
+        padding-bottom: 1.5em;
+      }
+
+      ul.species > li {
+        font-style: italic;
+      }
+
+      .anchor {
+        padding-top: 4em;
+        margin-top: -4em;
+      }
+
+      img.slide {
+        width: 100%;
+      }
+
+      div.slideshow {
+        max-width: 90% !important;
+      }
+
+      /* Mobile */
+      @media only screen and (min-width: 300px) and (max-width: 767px){
+        img.ui.image.section {
+          max-width: 40%;
+        }
+
+        #HQ_page p.black, li {
+          font-size: 1.2em;
+        }
+
+        div.ui.text.container {
+          padding-left: 2em;
+          padding-right: 2em;
+        }
+
+        .ui.centered.card {
+          width: 100% !important;
+        }
+
+        div.description {
+          font-size: 1.3em !important;
+        }
+
+        table {
+          font-size: 1.2em !important;
+        }
+
+        button {
+          margin: 1em !important;
+        }
+      }
+    </style>
+
+    <script type="text/javascript" src="https://2019.igem.org/wiki/index.php?title=Template:Stony_Brook/latex.js&action=raw&ctype=text/javascript"></script>
+
+    <script>
+      LatexIT.add('p', true);
+      LatexIT.add('span', true);
+      LatexIT.add('li', true);
+      LatexIT.add('td', true);
+      imagep = () => {
+        document.getElementById("imagep").removeAttribute("hidden");
+        document.getElementById("ode").setAttribute("hidden", true);
+        document.getElementById("evolution").setAttribute("hidden", true);
+        document.getElementById("spread").setAttribute("hidden", true);
+      }
+
+      ode = () => {
+        document.getElementById("imagep").setAttribute("hidden", true);
+        document.getElementById("ode").removeAttribute("hidden");
+        document.getElementById("evolution").setAttribute("hidden", true);
+        document.getElementById("spread").setAttribute("hidden", true);
+      }
+
+      evolution = () => {
+        document.getElementById("imagep").setAttribute("hidden", true);
+        document.getElementById("ode").setAttribute("hidden", true);
+        document.getElementById("evolution").removeAttribute("hidden");
+        document.getElementById("spread").setAttribute("hidden", true);
+      }
+
+      spread = () => {
+        document.getElementById("imagep").setAttribute("hidden", true);
+        document.getElementById("ode").setAttribute("hidden", true);
+        document.getElementById("evolution").setAttribute("hidden", true);
+        document.getElementById("spread").removeAttribute("hidden");
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Header -->
+    <div class="ui fluid container" style="background-color: #05386b">
+      <div data-aos="zoom-out" data-aos-delay="0" class="ui center aligned container">
+        <h1 class="ui inverted header">
+          Model
+        </h1>
+      </div>
+    </div>
+
+    <!-- Content -->
+      <div class="ui text container" style="padding-bottom: 2.5em">
+      <div class="buttons">
+        <button class="ui buttton change" onclick="imagep()">Image Processing</button>
+        <button class="ui buttton change" onclick="ode()">ODE</button>
+        <button class="ui buttton change" onclick="evolution()">Phylogeny</button>
+        <button class="ui buttton change" onclick="spread()">TMV Spread</button>
+      </div>
+
+      <div id="imagep">
+      <h2 class="ui header">
+        What is image processing and analysis?
+      </h2>
+
+      <p class="black">
+        Image processing is the use of algorithms to analyze digital images. This can include classification of objects and images, and pattern recognition. Image processing is also useful for analyzing a system that is difficult to analyze by hand. For our project, we used image processing and analysis to visualize and quantify the amount of mottling and fluorescence in our leaves during our experiments.
+      </p>
+
+      <h2 class="ui header">
+        Analyzing mottling on leaves
+      </h2>
+      <p class="black">
+        One of the symptoms of TMV is a mottled “mosaic” pattern on the leaf. This is seen as yellow or light green spots on the surface of the leaf (figure 1). Since it has been shown that these areas contained virus, and that the dark green areas are resistant to virus [1], we expected that if our gene was reducing the amount of viral RNA, it would also reduce the amount of mottling seen on the leaf.
+      </p>
+
+      <div class="ui centered card" style="width:67%">
+        <div class="image">
+          <img class="ui centered image" src="https://2019.igem.org/wiki/images/f/f8/T--Stony_Brook--image-1.jpg">
+        </div>
+        <div class="content">
+          <div class="description">
+            <strong>Figure 1.</strong> An example of mottling due to TMV on a leaf
+          </div>
+        </div>
+      </div>
+
+      <p class="black">
+        The algorithm used to measure mottling was adapted from [2], and is summarized in figure 2. First, the image of the lead is taken on a white background with a standard of known area (step 1). Next, the image is binarized so the leaf and the standard appear black, while the spots appear white (step 2). Then, the image is processed in two ways. First, the background is filled, so only the spots in white are shown (step 3a). Statistics such as the total area of all the spots, the number of spots, and the size of each spot is calculated. In parallel, the image is inverted and filled so only the standard and the entire leaf appear white (step 3b). The areas of the standard and the leaf are then calculated. The standard is distinguished from the leaf by measuring the eccentricity of each object, and taking the lower one as the standard. The leaf is then traced in green, and the standard is traced in magenta so the user can see if the program analyzed the objects correctly (step 3b). Then, using these statistics, metrics about the leaf can be displayed to the user, such as descriptive statistics (step 4), or a histogram of the spots (step 5).
+      </p>
+
+      <div class="ui centered card" style="width:100%">
+        <div class="image">
+          <img class="ui centered image" src="https://2019.igem.org/wiki/images/thumb/a/ad/T--Stony_Brook--image-2.jpg/800px-T--Stony_Brook--image-2.jpg.png">
+        </div>
+        <div class="content">
+          <div class="description">
+            <strong>Figure 2.</strong> TMV mottling algorithm.
+          </div>
+        </div>
+      </div>
+
+      <p class="black">
+        This algorithm was implemented using MATLAB. A GUI was created (figure 3) so the user can see each individual image as it is being analyzed. The user also has the option to switch the leaf and the standard if the program identified the objects incorrectly, and the option to download all the data and summary statistics as an Excel file. For a large amount of images, a script was also created in MATLAB that performs this algorithm for every image in a specified folder. To download these scripts and functions, please visit our <a class="link" href="https://github.com/iGEM-SBU">Github</a> page.
+      </p>
+
+      <div class="ui centered card" style="width:100%">
+        <div class="image">
+          <img class="ui centered image" src="https://2019.igem.org/wiki/images/thumb/c/c0/T--Stony_Brook--image-3.jpg/800px-T--Stony_Brook--image-3.jpg.png">
+        </div>
+        <div class="content">
+          <div class="description">
+            <strong>Figure 3.</strong> Image of the MATLAB GUI than can be used to visualize the TMV mottling algorithm described.
+          </div>
+        </div>
+      </div>
+
+      <h2 class="ui header">
+        Measuring bias in the program
+      </h2>
+
+      <p class="black">
+        When using the program to measure the leaves, the concern arose of whether the program was accurately measuring the area of the leaves. To address this issue, we measured the areas of 127 leaves using graph paper (figure 4), and then took pictures of those leaves to measure the area with the program.
+      </p>
+
+      <div class="ui centered card" style="width:67%">
+        <div class="image">
+          <img class="ui centered image" src="https://2019.igem.org/wiki/images/2/2d/T--Stony_Brook--image-4.jpg">
+        </div>
+        <div class="content">
+          <div class="description">
+            <strong>Figure 4.</strong> Example of graph paper used to calculate the true areas of leaves by hand, so they could be compared against in the program.
+          </div>
+        </div>
+      </div>
+
+      <p class="black">
+        First, the eccentricity of the leaves was measured against the eccentricity of the standard (piece of paper with known area) to make sure the eccentricity was a valid parameter to distinguish the leaf from the standard. MATLAB code was used to find the eccentricities, and perform significance testing. The eccentricities of the leaves $(\mu = 0.138995$, $\sigma = 0.044967)$ were significantly different than the eccentricities of the leaves $(\mu = 0.580446, \sigma = 0.150514)$ $(t_{252} = -31.6696, p < 0.001)$, as illustrated by the histogram in figure 5. Thus, we concluded that using the eccentricity was a valid parameter to distinguish between the leaf and the standard. For those few cases where it is not, a “switch objects” button was implemented to recalculate the leaf statistics when the standard and leaf were switched.
+      </p>
+
+      <div class="ui centered card" style="width:85%">
+        <div class="image">
+          <img class="ui centered image" src="https://2019.igem.org/wiki/images/1/17/T--Stony_Brook--image-5.jpg">
+        </div>
+        <div class="content">
+          <div class="description">
+            <strong>Figure 5.</strong> A histogram plot created in MATLAB of the distribution of eccentricities of the leaves and of the standards for all the photos. n=127.
+          </div>
+        </div>
+      </div>
+
+      <p class="black">
+        Then, the accuracy of the program was measured by calculated the relative error between the true areas (calculated by hand with the graph paper) and the program areas. As seen in the unshifted line graph (figure 6a), the program had a tendency to overestimate the area, and thus the program needed to be corrected. A dilation shift was then applied to all the data points. The shift was calculated using the formula <span class="block">\[shift=1 - \frac{m\overline{r}}{\Sigma \frac{p_i}{t_i}}\]</span>where $\overline{r}$ is the average relative error, and $\frac{p_i}{t_i}$ is the ratio of program area to true area for each image. For our data, our shift was calculated to be $0.649253$. As seen in the shifted line graph (figure 6b), the program areas align more closely to the true areas. A rank sum test was used to confirm that the distribution of shifted relative errors was not significantly different than a distribution with a mean of 0 $(U = 14001, p = 0.332)$. Thus, for all the mottling programs, a shift of $0.649253$ is applied to all areas before being outputted.
+      </p>
+
+      <div class="ui centered card" style="width:100%">
+          <div class="image">
+            <img class="ui centered image" src="https://2019.igem.org/wiki/images/thumb/8/88/T--Stony_Brook--image-6.jpg/800px-T--Stony_Brook--image-6.jpg.png">
+          </div>
+          <div class="content">
+            <div class="description">
+              <strong>Figure 6.</strong> Line plots of the relative errors of the program. Figure 6a (left) shows the unshifted data, while Figure 6b (right) shows the data multiplied by the shift mentioned in the paragraph. The red circles represent the individual data points. The blue line represents the line of best fit of these data points. The black dotted line is the reference line of y = x, or program area = true area. Figures were created in MATLAB.
+            </div>
+          </div>
+      </div>
+
+      <h2 class="ui header">
+          Analyzing fluorescence in leaves
+      </h2>
+
+      <p class="black">
+          The main use of images in our project was for measuring fluorescence intensity in the leaves. This was used as a quantitative measure of how much virus (GFP) and the gene (RFP) was expressed. For more information about our results, see our results page. <br><br>
+
+          The algorithm is summarized in figure 7. First, the image of the leaf with the fluorescence is taken (step 1). Next, the image is converted to a grayscale image based on the filter supplied (step 2). Then, if specified, the standards are specified to quantify the lowest and highest settings (step 3a). This will then adjust the intensity values of the image, where values below the low intensity will be set to 0, values above the high intensity will be set to 255, and values in between these intensities will be set to $255 \cdot \frac{v - s_o}{s_b - s_o}$, where $v$ is the data point, $s_o$ is the low intensity value, and $s_b$ is the high intensity value). Additionally, if a mask photo is specified, a mask will be applied to the photo to find the border of the leaf, which can be used to find the percent infected (step 3b). Then, the intensity of each region is measured in the grayscale image. A histogram of the distribution of the intensity of all the spots (step 4), and a heatmap of where these spots are located and how intense they are (step 5) can also be created based on the raw data.
+      </p>
+
+      <div class="ui centered card" style="width:100%">
+          <div class="image">
+            <img class="ui centered image" src="https://2019.igem.org/wiki/images/thumb/5/57/T--Stony_Brook--image-9.jpg/800px-T--Stony_Brook--image-9.jpg.png">
+          </div>
+          <div class="content">
+            <div class="description">
+              <strong>Figure 7.</strong> Fluorescence intensity algorithm.
+            </div>
+          </div>
+      </div>
+
+      <p class="black">
+          This algorithm was implemented using MATLAB. A GUI was created (figure 8) so the user can see each individual photo as it is being analyzed. The user also have the option to download all the graphs as MATLAB figure files, and the option to download all the data and statistics in an Excel file. For a large amount of images, a script was also created in MATLAB that performs this algorithm on all images in a specified folder. To download these scripts and functions, please visit our <a class="link" href="https://github.com/iGEM-SBU
+          ">Github</a> page.
+      </p>
+
+      <div class="ui centered card" style="width:100%">
+          <div class="image">
+            <img class="ui centered image" src="https://2019.igem.org/wiki/images/thumb/3/38/T--Stony_Brook--image-10.jpg/800px-T--Stony_Brook--image-10.jpg.png">
+          </div>
+          <div class="content">
+            <div class="description">
+              <strong>Figure 8.</strong> Image of the MATLAB GUI than can be used to visualize the fluorescent intensity algorithm described.
+            </div>
+          </div>
+      </div>
+
+      <h2 class="ui header"> Summary of our image processing </h2>
+      <p class="black">
+          We developed MATLAB code for analyzing mottling and fluorescence in leaves. We used this code to help quantify the amount of expression in our leaves during our experiment. All of our code is open source and is available on our Github page for other teams to look at, use, and adapt for their own purposes.
+      </p>
+
+      <h2>
+        References
+      </h2>
+      <p class="black">
+        <ol>
+          <li>Burundukova, O.L., et al. “Dark and Light Green Tissues of Tobacco Leaves Systemically Infected with Tobacco Mosaic Virus.” Biologica Plantarum, Apr. 2007, https://link.springer.com/content/pdf/10.1007/s10535-009-0053-8.pdf</li><br>
+
+          <li>Marathe, Hrushiketh, and Kothe, Prerna. “Leaf Disease Detection Using Image Processing Techniques.” International Journal of Engineering Research & Technology, Mar. 2013, https://www.ijert.org/research/leaf-disease-detection-using-image-processing-techniques-IJERTV2IS3480.pdf</li><br>
+        </ol>
+      </p>
+      </div>
+
+      <div id="ode" hidden>
+          <h2 class="ui header">
+              What is our ODE model about?
+          </h2>
+
+          <p class="black">
+              Our ordinary differential equation models the effect of tobacco mosaic virus (TMV) on the tobacco plant <i>Nicotiana benthamiana</i> and the effect of XRN1 on the TMV-infected plant. This is shown using two different functions, the first showing TMV infecting <i>Nicotiana benthamiana</i> and the second showing XRN1 degrading TMV.
+          </p>
+
+          <h2 class="ui header">
+              TMV Model
+          </h2>
+
+          <p class="black">
+              MATLAB was used to model the effect of TMV on <i>Nicotiana benthamiana</i>. TMV infects plant cells by releasing its RNA to be translated using host ribosomes. This RNA codes for a capsid protein (CP), movement protein (MP), and replicase protein (p50) that work together to assemble progeny viruses or a virus replication complex (VRC). A VRC is a complex formed in the cell’s endoplasmic reticulum (ER) that aids in infecting the plant by producing viruses and moving through the plasmodesmata (PD). We constructed the following biochemical reactions based on the nature of TMV infection with the following assumption(s):
+          </p>
+
+          <ol>
+            <li>Viruses are used whenever possible to infect healthy plant cells, thus the amount is kept to a minimal until all cells are infected.</li>
+            <li>
+                TMV proteins are used whenever possible to create a VRC, thus the amount is kept to a minimal.
+            </li>
+          </ol>
+
+          <ul class="eq" style="text-align: center">
+            <li>$C + mV \overset{k}{\rightarrow} I$</li>
+            <li>$I \overset{i}{\rightarrow} nV + I$</li>
+            <li>$I \overset{D_I}{\rightarrow} bV$</li>
+            <li>$V \overset{x}{\rightarrow} P$</li>
+            <li>$V + P \overset{p}{\rightarrow} W$</li>
+            <li>$W \overset{r}{\rightarrow} nV + W$</li>
+            <li>$W + C \overset{a}{\rightarrow} W + I$</li>
+            <li>$C + P \overset{h}{\rightarrow} 0$</li>
+            <li>$V \overset{D_C}{\rightarrow} 0$</li>
+            <li>$V \overset{D_V}{\rightarrow} 0$</li>
+            <li>$W \overset{D_V}{\rightarrow} 0$</li>
+            <li>$P \overset{D_P}{\rightarrow} 0$</li>
+            <li>$T \overset{g}{\rightarrow} T + C$</li> 
+          </ul>
+
+          <p class="black">From the biochemical reactions, we can obtain the following ODE:</p>
+
+          <ul class="eq" style="text-align: left">
+            <li>$dI = kCV^m - ID_I + aWC$</li>
+            <li>$dV = kCV^m + inI + bID_I - xV - pVP + rnW - VD_V$</li>
+            <li>$dC = -kCV^m - aWC + gC - hCP - CD_C$</li>
+            <li>$dW = pVP - WD_V$</li> 
+            <li>$dP = xV - pVP - hCP - PD_P$</li>
+          </ul>
+
+          <p class="black">Initial conditions:</p>
+
+          <ul class="eq" style="text-align: left">
+            <li>$C = 1 \times 10^7$</li>
+            <li>$V = 10$</li>
+            <li>All other values $= 0$</li>
+          </ul>
+
+          <table class="ui striped table">
+            <thead>
+              <tr>
+                <th class="two wide">Constant</th>
+                <th class="ten wide">Description</th>
+                <th class="two wide">Units</th>
+                <th class="two wide">Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>$m$</td>
+                <td>Multiplicity of Infection of TMV</td>
+                <td>$cells^{-1}$</td>
+                <td>$2$</td>
+              </tr>
+
+              <tr>
+                <td>$k$</td>
+                <td>Rate of virus to infect a cell</td>
+                <td>$min^{-1}$</td>
+                <td>$0.167$</td>
+              </tr>
+
+              <tr>
+                <td>$i$</td>
+                <td>Rate of infected cell producing viruses</td>
+                <td>$min^{-1}$</td>
+                <td>$0.25$</td>
+              </tr>
+
+              <tr>
+                <td>$b$</td>
+                <td>Number of viruses that burst from infected cell</td>
+                <td>$-$</td>
+                <td>$20$</td>
+              </tr>
+
+              <tr>
+                <td>$n$</td>
+                <td>Number of viruses produced from VRC and infected cell</td>
+                <td>$-$</td>
+                <td>$4$</td>
+              </tr>
+
+              <tr>
+                <td>$D_I$</td>
+                <td>Death rate of infected cell</td>
+                <td>$min^{-1}$</td>
+                <td>$5 \times 10^{-5}$</td>
+              </tr>
+
+              <tr>
+                <td>$x$</td>
+                <td>Rate of virus to create CP and MP</td>
+                <td>$min^{-1}$</td>
+                <td>$0.4$</td>
+              </tr>
+
+              <tr>
+                <td>$p$</td>
+                <td>Rate at which CP and MP are used to make VRC</td>
+                <td>$min^{-1}$</td>
+                <td>$0.3$</td>
+              </tr>
+
+              <tr>
+                <td>$r$</td>
+                <td>Rate of VRC replication</td>
+                <td>$min^{-1}$</td>
+                <td>$2$</td>
+              </tr>
+
+              <tr>
+                <td>$a$</td>
+                <td>Affinity for the cell to take VRC and become infected</td>
+                <td>$-$</td>
+                <td>$0.167$</td>
+              </tr>
+
+              <tr>
+                <td>$h$</td>
+                <td>Rate of cell with TMV protein to undergo hypersensitive response (HR) death</td>
+                <td>$min^{-1}$</td>
+                <td>$1 \times 10^{-4}$</td>
+              </tr>
+
+              <tr>
+                <td>$D_C$</td>
+                <td>Death rate of healthy plant cells</td>
+                <td>$min^{-1}$</td>
+                <td>$4 \times 10^{-5}$</td>
+              </tr>
+
+              <tr>
+                <td>$D_V$</td>
+                <td>Degradation rate of TMV</td>
+                <td>$min^{-1}$</td>
+                <td>$0.1$</td>
+              </tr>
+
+              <tr>
+                <td>$D_P$</td>
+                <td>Degradation rate of TMV proteins</td>
+                <td>$min^{-1}$</td>
+                <td>$0.1$</td>
+              </tr>
+
+              <tr>
+                <td>$g$</td>
+                <td>Growth rate of plant</td>
+                <td>$meters \times min^{-1}$</td>
+                <td>$1.7 \times 10^{-5}$</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table class="ui striped table">
+            <thead>
+              <tr>
+                <th class="two wide">Variable</th>
+                <th class="twelve wide">Description</th>
+                <th class="two wide">Units</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>$dI$</td>
+                <td>Infected cells</td>
+                <td>$cells$</td>
+              </tr>
+
+              <tr>
+                <td>$dV$</td>
+                <td>TMV</td>
+                <td>$molecules$</td>
+              </tr>
+
+              <tr>
+                <td>$dC$</td>
+                <td>Healthy plant cells</td>
+                <td>$cells$</td>
+              </tr>
+
+              <tr>
+                <td>$dW$</td>
+                <td>Virus replication complex</td>
+                <td>$molecules$</td>
+              </tr>
+
+              <tr>
+                <td>$dP$</td>
+                <td>TMV Protein</td>
+                <td>$molecules$</td>
+              </tr>
+
+            </tbody>
+          </table>
+
+          <div class="ui centered card" style="width:85%">
+            <div class="image">
+              <img class="ui centered image" src="https://2019.igem.org/wiki/images/5/5e/T--Stony_Brook--ode-1.jpg">
+            </div>
+            <div class="content">
+              <div class="description">
+                <strong>Figure 1.</strong> The first graph depicts the effects of TMV on <i>N. benthamiana</i>. The second graph depicts the concentration of proteins created from TMV during the infection. Assume the amount of cells in a leaf is approximately 10 million. Dpi = days post infection.
+              </div>
+            </div>
+          </div>
+
+          <h2 class="ui header">
+            XRN1 Model
+          </h2>
+
+          <p class="black">
+            Genetically engineered agrobacterium with XRN1 was agro-infiltrated into <i>N. benthamiana</i> to degrade TMV. The plant cells will adopt and express the XRN1 gene, allowing it to degrade TMV RNA. We constructed the following biochemical reaction based on the interaction of TMV and XRN1 with the following assumption(s):
+          </p>
+
+          <ol>
+            <li>XRN1 proteins are used whenever possible to cure infected cells, thus the amount is kept to a minimal</li>
+            <li>
+              XRN1 degrades after degrading TMV
+            </li>
+            <li>TMV stunts growth rate of the plant</li>
+            <li>Agrobacterium with XRN1 is agro-infiltrated into the plant after it is completely infected by TMV</li>
+          </ol>
+
+          <ul class="eq" style="text-align: center">
+            <li>$C \overset{c}{\rightarrow} C + X$</li>
+            <li>$I + X \overset{e}{\rightarrow} C$</li>
+            <li>$X \overset{v}{\rightarrow} - V - W$</li>
+            <li>$I \overset{D_I}{\rightarrow} bV$</li>
+            <li>$X \overset{D_X}{\rightarrow} 0$</li>
+            <li>$C \overset{D_C}{\rightarrow} 0$</li>
+            <li>$V \overset{D_V}{\rightarrow} 0$</li>
+            <li>$W \overset{D_V}{\rightarrow} 0$</li>
+          </ul>
+
+          <p class="black">From the biochemical reactions, we can obtain the following ODE:</p>
+
+          <ul class="eq" style="text-align: left">
+            <li>$dIX = -cIX - ID_I$</li>
+            <li>$dVX = -vX + bID_I - VD_V$</li>
+            <li>$dCV = cIX - CD_C$</li>
+            <li>$dWX = -vX - WD_V$</li> 
+            <li>$dX = eC - XD_X - cI_X - vX$</li>
+          </ul>
+
+          <p class="black">Initial conditions:</p>
+
+          <ul class="eq" style="text-align: left">
+            <li>$I = 10,000$</li>
+            <li>$V, W = 21,000$</li>
+            <li>$X = 1$</li>
+            <li>$C = 0$</li>
+          </ul>
+
+          <table class="ui striped table">
+            <thead>
+              <tr>
+                <th class="two wide">Constant</th>
+                <th class="ten wide">Description</th>
+                <th class="two wide">Units</th>
+                <th class="two wide">Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>$c$</td>
+                <td>Rate of curing infected cell</td>
+                <td>$min^{-1}$</td>
+                <td>$2$</td>
+              </tr>
+
+              <tr>
+                <td>$e$</td>
+                <td>Rate of healthy cell producing XRN1</td>
+                <td>$min^{-1}$</td>
+                <td>$2$</td>
+              </tr>
+
+              <tr>
+                <td>$v$</td>
+                <td>Rate of XRN1 degrading viruses</td>
+                <td>$min^{-1}$</td>
+                <td>$3$</td>
+              </tr>
+
+              <tr>
+                <td>$b$</td>
+                <td>Number of viruses that burst from infected cell</td>
+                <td>$-$</td>
+                <td>$20$</td>
+              </tr>
+
+              <tr>
+                <td>$D_I$</td>
+                <td>Death rate of infected cell</td>
+                <td>$min^{-1}$</td>
+                <td>$5 \times 10^{-5}$</td>
+              </tr>
+              
+              <tr>
+                <td>$D_X$</td>
+                <td>Degradation rate of XRN1</td>
+                <td>$min^{-1}$</td>
+                <td>$0.1$</td>
+              </tr>
+
+              <tr>
+                <td>$D_C$</td>
+                <td>Death rate of healthy plant cells</td>
+                <td>$min^{-1}$</td>
+                <td>$4 \times 10^{-5}$</td>
+              </tr>
+
+              <tr>
+                <td>$D_V$</td>
+                <td>Degradation rate of TMV</td>
+                <td>$min^{-1}$</td>
+                <td>$0.1$</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table class="ui striped table">
+            <thead>
+              <tr>
+                <th class="two wide">Variable</th>
+                <th class="twelve wide">Description</th>
+                <th class="two wide">Units</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>$dIX$</td>
+                <td>Infected cells</td>
+                <td>$cells$</td>
+              </tr>
+
+              <tr>
+                <td>$dVX$</td>
+                <td>TMV</td>
+                <td>$molecules$</td>
+              </tr>
+
+              <tr>
+                <td>$dCX$</td>
+                <td>Healthy plant cells</td>
+                <td>$cells$</td>
+              </tr>
+
+              <tr>
+                <td>$dWX$</td>
+                <td>Virus replication complex</td>
+                <td>$molecules$</td>
+              </tr>
+
+              <tr>
+                <td>$dX$</td>
+                <td>XRN1 Protein</td>
+                <td>$molecules$</td>
+              </tr>
+
+            </tbody>
+          </table>
+
+          <div class="ui centered card" style="width:85%">
+            <div class="image">
+              <img class="ui centered image" src="https://2019.igem.org/wiki/images/c/c4/T--Stony_Brook--ode-2.jpg">
+            </div>
+            <div class="content">
+              <div class="description">
+                <strong>Figure 2.</strong> The first graph depicts the effect of agrobacterium with XRN1 agro-infiltrated into a TMV-infected <i>N. benthamiana</i>. The second graph depicts the concentration of XRN1 during the infiltration. Assume the amount of cells in a leaf is approximately 10 million. Dpi = days post infection.
+              </div>
+            </div>
+          </div>
+
+          <h2>
+            References
+          </h2>
+          <p class="black">
+            <ol>
+              <li>Liu, Chengke, and Richard S. Nelson. “The Cell Biology of Tobacco Mosaic Virus Replication and Movement.” <i>Frontiers in Plant Science</i>, vol. 4, 2013, doi:10.3389/fpls.2013.00012.</li><br>
+    
+              <li>Mandadi, Kranthi K., and Karen-Beth G. Scholthof. “Plant Immune Responses Against Viruses: How Does a Virus Cause Disease?”<i>The Plant Cell</i>, vol. 25, no. 5, 2013, pp. 1489–1505., doi:10.1105/tpc.113.111658.
+              </li><br>
+
+              <li>Asurmendi, S., et al. “Coat Protein Regulates Formation of Replication Complexes during Tobacco Mosaic Virus Infection.” <i>Proceedings of the National Academy of Sciences</i>, vol. 101, no. 5, 2004, pp. 1415–1420., doi:10.1073/pnas.0307778101.</li>
+            </ol>
+          </p>
+      </div>
+
+      <div id="evolution" hidden>
+        <h2 class="ui header">
+          What is phylogenetic analysis?
+        </h2>
+
+        <p class="black">
+          Phylogeny refers to the evolutionary history of a species or its genes.  A phylogenetic analysis is a means of estimating the evolutionary relationships between species. Phylogenetics is important because it enriches our understanding of how species and their genes evolve in relation to one another.
+        </p>
+
+        <h2 class="ui header">
+          Introducing the XRN family
+        </h2>
+
+        <p class="black">
+          XRN family proteins are 5'-3' exoribonucleases in eukaryotes. There are four homologs in the XRN family: XRN1, XRN2, XRN3, XRN4. Each homolog slightly differs in its function and its location of enzymatic activity in the cell. For example, XRN1 and XRN4 are metabolically active in the cytoplasm, whereas XRN2 and XRN3 are found in the cell’s nucleus. <br><br>
+
+          This is the first attempt to create a phylogenetic tree for the XRN family. A literature review of this gene revealed that there were no previous attempts to constructing one, making this a new but promising area of research. <br><br>
+
+          <i>S.cerevisiae</i> has XRN1 and XRN2, but does not possess XRN3 or XRN4. Most plant species, however, lack XRN1 and instead have the XRN3 and XRN4 exoribonucleases. We did not find XRN1 in any of the <i>Nicotiana</i> species, but they did have XRN3 and XRN4. The species we are genetically modifying (<i>Nicotiana benthamiana</i>) was not found to have XRN3 or XRN4, although this could be due to the lack of data in the genome database.
+        </p>
+
+        <h2 class="ui header">
+          The evolutionary question
+        </h2>
+
+        <p class="black">
+          Why is the XRN1 gene found in <i>S.cerevisiae</i> and not in plants? Was this gene lost or did it evolve into something new when it got to plants? Outlined are three possible scenarios for what could have occurred (cladograms pictured in order from left to right corresponding to scenarios).
+        </p>
+
+        <div class="image">
+          <img class="ui centered image" src="https://2019.igem.org/wiki/images/8/8d/T--Stony_Brook--evolution-11.jpg">
+        </div>
+
+        <ul>
+          <li>Scenario 1: Ancient ancestor of plants possessed XRN1, but on its way to becoming modern plants, the gene changed significantly and is now unrecognizable.</li>
+          <li>Scenario 2: Ancient ancestor possessed XRN1, but on its way to becoming plants, it lost it.</li>
+          <li>Scenario 3:  Ancient ancestor did not have XRN1, but the ancestor of fungi/animals acquired the gene.</li>
+        </ul>
+
+        <h2 class="ui header">
+          Our objective
+        </h2>
+
+        <p class="black">
+          To attempt to answer the evolutionary questions posed above, a phylogenetic tree of the XRN protein homologs was constructed. Ideally, our data would have a very clear relationship and point to one of the scenarios. However, most of the time, the data does not show a clear trend. Since this was the case for our project, it is impossible to pinpoint which one of the scenarios occurred. Instead, our goal was to provide the evolutionary context for the protein XRN1 to help aid our understanding of the main project and its feasibility. <br><br>
+
+          <strong>Hypothesis:</strong> Based on the location of enzymatic activity in the cell, we hypothesized that XRN1 and XRN4 would be more evolutionarily related since they are both cytoplasmic enzymes. Similarly, we hypothesized that XRN2 and XRN3 would also be more evolutionarily related because they are active in the nucleus.
+        </p>
+
+        <h2 class="ui header">
+          Data
+        </h2>
+
+        <h3 class="ui header">
+          1. Constructing a list of species for the tree
+        </h3>
+
+        <p class="black">
+          The species for our phylogenetic tree were chosen based on the availability of their genome sequences and how well studied they were. This was crucial because choosing a species without a well-researched genome would skew our results, as the protein database could be missing an XRN homolog that is actually present in the organism, and is only absent because its DNA has not been thoroughly studied or documented. We intentionally limited the number of species in our tree, as we found that more organisms on the tree made cluttered and thus harder to see the evolutionary relationship between the XRN genes. Below is the list of species used in our analysis.
+        </p>
+
+        <h3 class="ui header">
+          Yeast
+        </h3>
+        <ul class="species">
+          <li>Candida albicans</li>
+          <li>S. cerevisiae</li>
+        </ul>
+
+        <h3 class="ui header">
+          Plant Ancestors (alga)
+        </h3>
+        <ul class="species">
+          <li>Chlamydomonas reinhardtii</li>
+        </ul>
+
+        <h3 class="ui header">
+          Fungi
+        </h3>
+        <ul class="species">
+          <li>Schizosaccharomyces pombe</li>
+          <li>Neurospora crassa</li>
+        </ul>
+
+        <h3 class="ui header">
+          Plants
+        </h3>
+        <ul class="species">
+          <li>Arabidopsis thaliana</li>
+          <li>Selaginella moellendorffii </li>
+          <li>Zea mays</li>
+          <li>Oryza sativa </li>
+          <li>Nicotiana tabacum</li>
+          <li>Nicotiana tomentosiformis </li>
+          <li>Nicotiana sylvestris</li>
+        </ul>
+
+        <h3 class="ui header">
+          2. Aligning the protein sequences and characterizing their domains
+        </h3>
+
+        <div class="image">
+          <img class="ui centered image" src="https://2019.igem.org/wiki/images/thumb/8/86/T--Stony_Brook--evolution-2.jpg/800px-T--Stony_Brook--evolution-2.jpg.png">
+        </div>
+
+        <p class="black">
+          Using NCBI, the species were blasted for XRN1 and their FASTA files were downloaded. We uploaded the FASTA file to Clustal to align the sequences, as shown above. From this, we characterized the domains of the XRN proteins. We identified two domains(XRN-N and XRN-M) present in most of the XRN homologs, as well as four unique domains found only in XRN1(D1-D4).
+        </p>
+
+        <ul class="eq">
+          <li>XRN-N (N-terminus, position 1-230)</li>
+          <li>XRN-M (helical domain with catalytic core, position 272-680) </li>
+          <li>D1 (position 723-914)</li>
+          <li>D2 (position 918-1005) </li>
+          <li>D3 (position 1090-1157)</li>
+          <li>D4 (position 1163-1233)</li>
+        </ul>
+
+        <p class="black">
+          This alignment was also helpful because it allowed us to identify and eliminate species with protein sequences that were not similar to the protein sequence of XRN1. This shows the limitations of databases, as they sometimes mistakenly categorize a protein as XRN.
+        </p>
+
+        <h3 class="ui header" style="margin-bottom: 1.5em;">
+          3. Creating the phylogenetic tree
+        </h3>
+
+        <div class="slideshow">
+          <div class="slide1 fade">
+            <img class="slide" src="https://2019.igem.org/wiki/images/7/72/T--Stony_Brook--evolution-3.jpg">
+          </div>
+  
+          <div class="slide1 fade">
+            <img class="slide" src="https://2019.igem.org/wiki/images/2/20/T--Stony_Brook--evolution-4.jpg">
+          </div>
+  
+          <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+        </div>
+        <br>
+  
+        <div style="text-align: center">
+          <span class="dots1 computer" onclick="currentSlide(1, 0)"></span>
+          <span class="dots1 computer" onclick="currentSlide(2, 0)"></span>
+        </div>
+
+        <p class="black">
+          The evolutionary history was inferred by using the Maximum Likelihood method and Le_Gascuel_2008 (LG+G+I) model with bootstrap (1000 replications). The tree with the highest log likelihood (-5899.25) is shown. The percentage of trees in which the associated taxa clustered together is shown next to the branches. Initial tree(s) for the heuristic search were obtained automatically by applying Neighbor-Join and BioNJ algorithms to a matrix of pairwise distances estimated using a JTT model, and then selecting the topology with superior log likelihood value. A discrete Gamma distribution was used to model evolutionary rate differences among sites (5 categories (+G, parameter = 0.8197)). The rate variation model allowed for some sites to be evolutionarily invariable ([+I], 12.25% sites). The tree is drawn to scale, with branch lengths measured in the number of substitutions per site. This analysis involved 26 amino acid sequences. All positions with less than 95% site coverage were eliminated, i.e., fewer than 5% alignment gaps, missing data, and ambiguous bases were allowed at any position (partial deletion option). There were a total of 302 positions in the final dataset. <br><br>
+
+          Species marked with an asterisk* on the tree denote improper naming of the protein by the database. <br><br>
+
+          The tree is shown in two formats: rectangular and radial. The radial is technically more accurate for our purposes because it is unrooted, but it is harder to view, so the rectangular is provided for reference. An unrooted tree is more conservative as opposed to the midpoint (rectangular tree) because it doesn’t show time.
+        </p>
+
+        <h3 class="ui header">
+          4. Constructing the Ancestral Sequence of XRN1
+        </h3>
+
+        <p class="black">
+          Using Fastml, we were able to derive the ancestral sequence of XRN1. We obtained the ancestral sequences of all nodes on the tree, not just the furthest common ancestor. In <a class="link" href="https://2019.igem.org/wiki/images/4/4c/T--Stony_Brook--sequence.txt">this document</a>, the sequences of all the nodes are shown. N refers to a node on the tree and the number tells you which node on the tree it is referring to. On the tree (see above), we have labeled where these nodes are located. N1 is the most ancient common ancestor.
+        </p>
+
+        <p class="black" style="overflow-x: scroll">
+          N1 ancestral sequence: MGIPAFYRWLSEKYPLIISQVIEDEPIAIAGGGGATVPVDSSKPNPNGVEFDNLYLDMNGIIHPCSHPEDQLTHADIDRPSPTTEEEMFAAIFEYIDRLFRIVRPRKLLYMAIDGVAPRAKMNQQRSRRFRAAKDALDAEEEEERLRKQFEAEGREVRAPPKEESEVEVVVKKAFDSNCITPGTEFMAVLSEALQYYIHCKLNEDPGWQNIKVILSDANVPGEGEHKIMEFIRSQRSLPDYDPNTRHCLYGLDADLIMLGLATHEPHFSILREDVFYQNSGYGLSIESTTQPEKCYLCGQKGHLKERPWQAANCEGKAKRKRGEFDQKDELEPLPKKPFQFLHISVLREYLELELQEIPDPPKFKYDFERIIDDFIFICFFVGNDFLPHMPTLEIHEGAIDLLMSIYKQEFPNMGGYLTDMDKVKDKYNGHVNLSRVEHFIQALGKYEDKIFQKRARLHERQAKRIKRDKLKDEKKQRRRGDHRQLRQRPESLGPIARFSGSRLNQFPSPSPFQSNKPKLTSNHDAVDHANVSSLSDLNIQSENREDVDNQLPSSRSRSVDSSSTPADTLRVAETTAEEAAPPATLEDRMQEIKEELKKKQKASLREKSEVFKSDNEVTDKVKLWEEGWKDRYYEEKFKAHITPEEDEEVRRDVVQRYTEGLCWVLHYYYQGCPSWNWFYPYHYAPFASDLKDLGQELINEKIDIKFELGTPFKPFEQLMGVLPAASRHAIPECYRPLMSDENSPIIDFYPNDFEIDMNGKRFSWQGIALLPFIDERRLLAAMRKVEHTLTEEERRRNSVGKDILFVFASHYTHFYPSPLPGFFPDLEHNQCIEKEYKLPPMEGKEYRIGLCPGAKLGAFMLAGFPTFHTLPFKSELAYHEIKVFGHPSRNQSMILNVEDVWKTSDLTLEQFAQQYVNKQFYSKWPYLRECKLEPVMDEGYMYLAQKTNGYKPFGELIRPLSSQTKNLFNYERSTMIHKFDKQCGHKFGEMNLLGYQKPVPGLVRNHEGALVKKFSKSGLEYYPLQLVVKKYAGKDQRYKYRPPPPIEEEFPLDSKVFFLGDYAYGGPAKIVGYNDDKTKLGITWFKTQPGLEPNWGKERLNMDKNEVKYYPSYIVAKLLHLHPLLLSKITSQFMITDGTKRKVNIGLELKFEARHQKVLGYTRKSPKGKFWEFSNLTINLIKEYKNTFPGLFKKLTNHGNKDNLSGDLFPDCFPKDDMEQLKGIKHWLKEVGSKFLPVSLEDEDFLKFDIQKLEEYMDNYLGMGQGGYQRKEGKGGPREGYLGPGEGYQLLRGQYFDLGDRGGYGQDFGKQPILSYGPPPGWMPLPPPHHLGFGFDQPLLPGGNLYGRCPGGRGYGGYGSLVLGYQNKQFVYHSRAGKNRKKKTDENNIRKLKAKEAKKNPKQQQQQKEQQKKQKQDEQQFQKGDNELLNLLKKKNDMMGTQKDSKPDGDCKKKEPKDYDKENGQEDEANFEKAPLDNPTVAGSIFRVDPNQYKQGYGHIYNNPMPPGPMRPPPPPPPGPGHPQQFPYGYPIPPPFMPMHPGYHPLHPGQPPYPNFYGQYPPPGQPFGFGQPPPPPPPPPMTQGQPYGQGGTRDEYQGQDNKYNGPGRQHGGYRGRGGYRGGGYKGGGKGGGYRNHQECPKPKVKQEAADRDNKKDEST
+        </p>
+
+        <h2 class="ui header">
+          Discussion
+        </h2>
+
+        <h3 class="ui header">
+          How does <i>S. cerevisae</i>’s XRN1 relate to other XRNs?
+        </h3>
+
+        <p class="black">
+          In our analysis of the tree, we looked at how <i>S. cerevisae</i>’s XRN1 related to other XRNs, especially the XRN4 found in <i>Nicotiana</i> species. As shown on the tree, XRN1 is evolving very fast even within yeast. Since there is already so much differentiation occurring between the XRN1s in yeast, by the time XRN4 is in plants, there is a significant difference between XRN1 and XRN4. While XRN1 and XRN4 are both active in the cytoplasm, they are less related than we had initially thought.
+        </p>
+
+        <h3 class="ui header">
+          Was our hypothesis correct?
+        </h3>
+
+        <p class="black">
+          Assuming our radial tree is correct, XRN3 and XRN4 arose in plants and are equidistantly related to XRN1. It appears that XRN2 is actually more closely related to XRN1. Thus, our hypothesis was incorrect. XRN1 and XRN4 are not more evolutionarily similar even though they are metabolically active at the same cell location.
+        </p>
+
+        <h3 class="ui header">
+          Arbitrary Naming of XRNs
+        </h3>
+
+        <p class="black">
+          While conducting our research, we ran into the problem of databases listing a protein as XRN when it was not the case. During our protein alignment and construction of the tree, we found that there are many proteins that have been mislabeled as XRN when they were not or were labeled the wrong homolog of XRN. For example, XRN3 of the plant species <i>Arabidopsis thaliana</i> was incorrectly labeled XRN2. We wanted to note this for future research purposes, as these mistakes could hinder future phylogenetic studies of the XRN family.
+        </p>
+
+        <h3 class="ui header">
+          Conclusions and Future Research
+        </h3>
+
+        <p class="black">
+          The main goal of this modeling project was to provide evolutionary context to our main project. We were able to gain a better understanding of how the XRN1 found in <i>S. cerevisae</i> relates to the XRN4 in <i>Nicotiana</i> species. The effect of integrating XRN1 into a plant genome was unknown. On one hand, this showed that the exoribonuclease we are inserting is very different than the exoribonuclease normally found in plants. This could raise some concerns about whether the XRN1 enzyme would be functional/stable in plants. If we were to do this experiment again using the results from this phylogenetic analysis, the XRN from a relative ancestor of plants (such as a green alga) may have been a more suitable choice. Using the ancestral sequences we derived above (section 4), one could insert the sequence of N4 or N7 into a plant and observe its results. Of course, we are not implying that these proteins would be extremely effective in attacking TMV- the results cannot be determined without an experiment. However, because they are more closely related to <i>Nicotiana</i> than the XRN1 found in yeast, perhaps their stability would lend to more desirable results.
+        </p>
+        
+        <h2>
+          References
+        </h2>
+        <p class="black">
+          <ol>
+            <li>Chang, J. H., Xiang, S., Xiang, K., Manley, J. L., & Tong, L. (2011). Structural and biochemical studies of the 5′→ 3′ exoribonuclease Xrn1. <i>Nature structural & molecular biology</i>, 18(3), 270.</li><br>
+  
+            <li>Miki, T. S., & Großhans, H. (2013). The multifunctional RNase XRN2.
+            </li><br>
+
+            <li>Sakyiama, J., Zimmer, S. L., Ciganda, M., & Williams, N. (2013). Ribosome biogenesis requires a highly diverged XRN family 5′→ 3′ exoribonuclease for rRNA processing in Trypanosoma brucei. Rna, 19(10), 1419-1431.</li>
+
+            <li>Souret, F. F., Kastenmayer, J. P., & Green, P. J. (2004). AtXRN4 degrades mRNA in Arabidopsis and its substrates include selected miRNA targets. <i>Molecular cell</i>, 15(2), 173-183.
+            </li>
+          </ol>
+        </p>
+      </div>
+
+      <div id="spread" hidden>
+        <h2 class="ui header">
+          What is agent-based modeling?
+        </h2>
+
+        <p class="black">
+            Agent-based modeling is a simulation modeling technique that uses agents to model complex systems, and it has seen applications in many fields, including biology. An agent-based model (ABM) simulates actions and interactions between autonomous entities, called agents. Each agent behaves according to a set of rules, and exhibits various behaviours depending on the status of the system. For example, consider an ecosystem that consists of sheep and wolves, and we want to determine the population of each species at a certain time. The agents would be the sheep and the wolves, and we can define what happens when two sheep interact and when a sheep and a wolf interact. ABM introduces a factor of randomness into the model and is able to simulate behaviours that would be hard or impossible to simulate with regular mathematical models. In short, ABM describes a system from the perspective of its constituents [1].
+        </p>
+
+        <div class="ui centered card" style="width:67%">
+            <div class="image">
+              <img class="ui centered image" src="https://2019.igem.org/wiki/images/9/9d/T--Stony_Brook--netlogo-0.jpg">
+            </div>
+            <div class="content">
+              <div class="description">
+                <strong>Figure 1.</strong> An agent-based model (ABM) describes the entities of a system as agents, the set of rules for their behavior and the interactions between agents [2].
+              </div>
+            </div>
+        </div>
+
+        <h2 class="ui header">
+            Why use agent-based modeling?
+        </h2>
+
+        <h3 class="ui header">
+          1. It makes it easier to capture emergent phenomena.
+        </h3>
+        <p class="black">
+            Complex and unanticipated behavior may arise from entities of a model interacting with one another. Since we are defining rules for interactions between agents in ABM, it makes it easy to capture phenomena resulting from such interactions.
+        </p>
+
+        <h3 class="ui header">
+            2. It provides a natural description of the system.
+        </h3>
+        <p class="black">
+            In a system that is made up of autonomous entities, it is natural to describe their behavior and how they interact with each other, and ABM makes that possible.
+        </p>
+
+        <h3 class="ui header">
+            3. It is flexible.
+        </h3>
+        <p class="black">
+            In an ABM, it is easy to add more agents, and add or modify the rules in which they behave and interact. This makes ABMs flexible [1].
+        </p>
+
+        <h2 class="ui header">
+            NetLogo
+        </h2>
+
+        <p class="black">
+            <a class="link" href="https://ccl.northwestern.edu/netlogo/index.shtml">NetLogo</a> is a open-source software for developing agent-based models. It is useful for modeling complex systems that change over time. It uses a variant of Logo as its programming languages and provides an easy-to-use graphical user interface for visualizing the parameters and the agents of the system.
+        </p>
+
+        <div class="image">
+            <img class="ui centered image" src="https://2019.igem.org/wiki/images/6/6f/T--Stony_Brook--netlogo-1.jpg">
+        </div>
+
+        <p class="black">Features of a NetLogo model:</p>
+        <ul>
+          <li>Turtles: Mobile agents</li>
+          <li>Patches: A grid of stationary agents</li>
+          <li>Links: Agents that connect turtles to define interactions between them</li>
+          <li>Procedures: For describing sets of behavior rules for the agents</li>
+          <li>Reporters: Functions that tell us something about the status of the agents</li>
+        </ul>
+
+        <div class="ui centered card" style="width:100%">
+            <div class="image">
+              <img class="ui centered image" src="https://2019.igem.org/wiki/images/a/a5/T--Stony_Brook--netlogo-2.jpg">
+            </div>
+            <div class="content">
+              <div class="description">
+                <strong>Figure 2.</strong> A wolf sheep predation example model on NetLogo.
+              </div>
+            </div>
+        </div>
+
+        <h2 class="ui header">
+            Tobacco Mosaic Virus (TMV) Spread Model
+        </h2>
+
+        <p class="black">
+            This year, our team developed a model of cell-to-cell spreading of Tobacco Mosaic Virus (TMV) using NetLogo. The model has two agents, virus replication complexes (VRC) and cells. VRCs are represented as small white triangles, and can move within the cell, spread to adjacent cells, and replicate inside a cell. Cells are represented by a green area that is enclosed by a black border. The cells are essentially a randomly generated Voronoi diagram. Healthy cells are represented as green, while infected ones are represented as red. The model also has links between adjacent cells, which are represented by gray lines between the centers of adjacent cells. This is a dual graph of the Voronoi diagram. There is also a slider that allows the user to change the number of initial infection sites (1 - 20).
+        </p>
+
+        <h3 class="ui header">
+            Assumptions of the model
+        </h3>
+
+        <ol>
+          <li>The number of VRCs produced in a cell to spread to adjacent cells is equal to the number of its healthy adjacent cells.</li>
+          <li>VRCs do not move to an already infected cell.</li>
+          <li>Each VRC spreads to a different healthy cell.</li>
+        </ol>
+
+        <h2 class="ui header">
+            Behavior of VRC agents
+        </h2>
+        <p class="black">Initial infection and spreading [3]:</p>
+
+        <table class="ui striped table">
+            <thead>
+              <tr>
+                <th class="four wide">Hours post infection</th>
+                <th class="twelve wide">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>0 - 14</td>
+                <td>Viral RNA and proteins are produced, and VRCs are formed. They are still motionless.</td>
+              </tr>
+
+              <tr>
+                  <td>14 - 16</td>
+                  <td>VRCs rapidly move within the initially infected cell.</td>
+                </tr>
+
+              <tr>
+                  <td>16 - 18</td>
+                  <td>Movement of VRCs is slowed down and eventually stopped. VRCs are now located at or adjacent to plasmodesmata.</td>
+              </tr>
+
+              <tr>
+                  <td>18 - 20</td>
+                  <td>Plasmodesmata are opened by VRCs. They are motionless in this state.</td>
+              </tr>
+
+              <tr>
+                  <td>20+</td>
+                  <td> VRCs spread to adjacent cells, and replication is initiated in secondary cells.</td>
+              </tr>
+            </tbody>
+        </table>
+
+        <p class="black">Replication and spreading in secondary cells and so on [3]:</p>
+
+        <table class="ui striped table">
+            <thead>
+              <tr>
+                <th class="four wide">Hours post infection</th>
+                <th class="twelve wide">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>0 - 2</td>
+                <td>VRCs rapidly move within the infected cell.</td>
+              </tr>
+
+              <tr>
+                  <td>2 - 4</td>
+                  <td>VRCs move to plasmodesmata and spread to adjacent cells to infect more cells.</td>
+              </tr>
+            </tbody>
+        </table>
+
+        <div class="ui centered card" style="width:100%">
+            <div class="image">
+              <img class="ui centered image" src="https://2019.igem.org/wiki/images/b/be/T--Stony_Brook--netlogo-3.jpg">
+            </div>
+            <div class="content">
+              <div class="description">
+                <strong>Figure 3.</strong> The NetLogo model for TMV spread in action. The number of healthy cells, infected cells and VRCs can be seen on the graph on the left.
+              </div>
+            </div>
+        </div>
+
+        <div class="ui centered card" style="width:67%">
+            <div class="image">
+              <img class="ui centered image" src="https://2019.igem.org/wiki/images/7/7a/T--Stony_Brook--netlogo-4.jpg">
+            </div>
+            <div class="content">
+              <div class="description">
+                <strong>Figure 4.</strong> The resulting graph from running the model with one initial infection site.
+              </div>
+            </div>
+        </div>
+
+        <p class="black">To view the source code of this model, please visit our <a class="link" href="https://github.com/iGEM-SBU">organizational Github account</a>.</p>
+
+        <h2 class="ui header">
+            Future goals
+        </h2>
+
+        <p class="black">
+            This model could definitely be expanded to simulate the spread of TMV throughout the entire plant, not just one leaf. It would also be possible to include XRN1 in the model and analyze its effect on the spread of the virus. Future iGEM teams could also use this program as a baseline to develop their own virus spread models. 
+        </p>
+
+        <h2>
+            References
+        </h2>
+        <p class="black">
+          <ol>
+            <li>Bonabeau, Eric. “Agent-Based Modeling: Methods and Techniques for Simulating Human Systems.” PNAS, National Academy of Sciences, 14 May 2002, www.pnas.org/content/99/suppl_3/7280/tab-figures-data.
+            </li><br>
+
+            <li>Galán, José Manuel, Izquierdo, Luis R., Izquierdo, Segismundo S., Santos, José Ignacio, del Olmo, Ricardo, López-Paredes, Adolfo and Edmonds, Bruce (2009). 'Errors and Artefacts in Agent-Based Modelling'. Journal of Artificial Societies and Social Simulation 12(1)1.
+              </li><br>
+
+            <li>Kawakami, Shigeki, et al. “Tobacco Mosaic Virus Infection Spreads Cell to Cell as Intact Replication Complexes.” PNAS, National Academy of Sciences, 20 Apr. 2004, www.pnas.org/content/101/16/6291.</li><br>
+          </ol>
+        </p>
+
+      </div>
+    </div>
+
+    <script type="text/javascript" src="https://2019.igem.org/wiki/index.php?title=Template:Stony_Brook/slideshow.js&action=raw&ctype=text/javascript"></script>
+
+    <script>
+      AOS.init();
+    </script>
+
+  </body>
+</html>
+{{Stony_Brook/footer}}

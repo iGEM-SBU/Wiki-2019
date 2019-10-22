@@ -1,0 +1,186 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/ico" href="https://2019.igem.org/wiki/images/6/65/T--Stony_Brook--favicon.png"/>
+    <title>iGEM SBU 2019</title>
+
+    <!-- Semantic UI -->
+    <link rel="stylesheet" type="text/css" href="https://2019.igem.org/wiki/index.php?title=Template:Stony_Brook/semantic.min.css&action=raw&ctype=text/css" media="all" />
+
+    <script type="text/javascript" src="https://2019.igem.org/wiki/index.php?title=Template:Stony_Brook/semantic.min.js&action=raw&ctype=text/javascript"</script>
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://2019.igem.org/wiki/index.php?title=Template:Stony_Brook/jquery.js&action=raw&ctype=text/javascript"></script>
+
+    <!-- For responsive navbar -->
+    <link rel="stylesheet" type="text/css" href="https://2019.igem.org/wiki/index.php?title=Template:Stony_Brook/hamburger.css&action=raw&ctype=text/css" media="all"/>
+    <script type="text/javascript" src="https://2019.igem.org/wiki/index.php?title=Template:Stony_Brook/hamburger.js&action=raw&ctype=text/javascript"></script>
+
+    <meta name="viewport" content="width=device-width, maximum-scale=2, user-scalable=yes" />
+
+    <!-- Wiki Reset -->
+    <link rel="stylesheet" type="text/css" href="https://2019.igem.org/wiki/index.php?title=Template:Stony_Brook/wikireset.css&action=raw&ctype=text/css" />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="https://2019.igem.org/wiki/index.php?title=Template:Stony_Brook/styles.css&action=raw&ctype=text/css" />
+
+    <!-- AOS -->
+    <link rel="stylesheet" type="text/css" href="https://2019.igem.org/wiki/index.php?title=Template:Stony_Brook/aos.css&action=raw&ctype=text/css" />
+    <script type="text/javascript" src="https://2019.igem.org/wiki/index.php?title=Template:Stony_Brook/aos.js&action=raw&ctype=text/javascript"></script>
+
+    <script>
+    $(document)
+      .ready(function() {
+        $('.ui.menu .ui.dropdown').dropdown({
+          on: 'hover'
+        });
+        $('.ui.menu a.item')
+          .on('click', function() {
+            $(this)
+              .addClass('active')
+              .siblings()
+              .removeClass('active');
+          });
+      });
+    </script>
+
+  </head>
+  <body>
+    <!-- Computer Menu-->
+    <div class="ui container computer">
+      <div class="ui top green stackable fixed labeled icon computer menu">
+        <a class="ui item bordered">
+          <i class="green leaf icon"></i>
+          iGEM SBU
+        </a>
+        <a class="right ui item" href="https://2019.igem.org/Team:Stony_Brook">
+          <i class="home icon"></i>
+          Home
+        </a>
+        <div class="ui dropdown item bordered">
+          <i class="users icon"></i>
+          Team
+          <div class="menu">
+            <a class="item" href="https://2019.igem.org/Team:Stony_Brook/Team">Team Members</a>
+            <a class="item" href="https://2019.igem.org/Team:Stony_Brook/Collaborations">Collaborations</a>
+            <a class="item" href="https://2019.igem.org/Team:Stony_Brook/Attributions">Attributions</a>
+          </div>
+        </div>
+        <div class="ui dropdown item">
+          <i class="lightbulb icon"></i>
+          Project
+          <div class="menu">
+            <a class="item" href="https://2019.igem.org/Team:Stony_Brook/Description">Description</a>
+            <a class="item" href="https://2019.igem.org/Team:Stony_Brook/Design">Design</a>
+            <a class="item" href="https://2019.igem.org/Team:Stony_Brook/Experiments">Experiments</a>
+            <a class="item" href="https://2019.igem.org/Team:Stony_Brook/Notebook">Notebook</a>
+            <a class="item" href="https://2019.igem.org/Team:Stony_Brook/Model">Model</a>
+            <a class="item" href="https://2019.igem.org/Team:Stony_Brook/Results">Results</a>
+            <a class="item" href="https://2019.igem.org/Team:Stony_Brook/Characterization">Characterization</a>
+          </div>
+        </div>
+        <div class="ui dropdown item">
+          <i class="cogs icon"></i>
+          Parts
+          <div class="menu">
+            <a class="item" href="https://2019.igem.org/Team:Stony_Brook/Parts">Parts Overview</a>
+            <a class="item" href="https://2019.igem.org/Team:Stony_Brook/BasicParts">Basic Parts</a>
+          </div>
+        </div>
+        <a class="ui item" href="http://2019.igem.org/Team:Stony_Brook/Safety">
+          <i class="shield alternate icon"></i>
+          Safety
+        </a>
+        <div class="ui dropdown item">
+          <i class="globe icon"></i>
+          Human Practices
+          <div class="menu">
+            <a class="item" href="http://2019.igem.org/Team:Stony_Brook/Human_Practices">Integrated Human Practices</a>
+            <a class="item" href="http://2019.igem.org/Team:Stony_Brook/Public_Engagement">Education & Engagement</a>
+          </div>
+        </div>
+        <div class="ui dropdown item">
+          <i class="trophy icon"></i>
+          Awards
+          <div class="menu">
+            <a class="item" href="https://2019.igem.org/Team:Stony_Brook/Plant">Plant</a>
+            <a class="item" href="https://2019.igem.org/Team:Stony_Brook/Wiki">Wiki</a>
+          </div>
+        </div>
+        <div class="hamburger ">
+    	    <span class="hamburger-bun"></span>
+    	    <span class="hamburger-patty"></span>
+    	    <span class="hamburger-bun"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="ui container mobile">
+      <div class="ui top green fixed stackable mobile menu">
+        <a class="ui item ">
+          <i class="green leaf icon"></i>
+          iGEM SBU
+        </a>
+        <a class="ui item" href="https://2019.igem.org/Team:Stony_Brook">
+          <i class="home icon"></i>
+          Home
+        </a>
+        <div class="ui dropdown item">
+          <i class="users icon"></i>
+          Team
+          <div class="menu">
+            <a class="item" href="https://2019.igem.org/Team:Stony_Brook/Team">Team Members</a>
+            <a class="item" href="https://2019.igem.org/Team:Stony_Brook/Collaborations">Collaborations</a>
+            <a class="item" href="https://2019.igem.org/Team:Stony_Brook/Attributions">Attributions</a>
+          </div>
+        </div>
+        <div class="ui dropdown item">
+          <i class="lightbulb icon"></i>
+          Project
+          <div class="menu">
+            <a class="item" href="https://2019.igem.org/Team:Stony_Brook/Description">Description</a>
+            <a class="item" href="https://2019.igem.org/Team:Stony_Brook/Design">Design</a>
+            <a class="item" href="https://2019.igem.org/Team:Stony_Brook/Experiments">Experiments</a>
+            <a class="item" href="https://2019.igem.org/Team:Stony_Brook/Notebook">Notebook</a>
+            <a class="item" href="https://2019.igem.org/Team:Stony_Brook/Model">Model</a>
+            <a class="item" href="https://2019.igem.org/Team:Stony_Brook/Results">Results</a>
+          </div>
+        </div>
+        <div class="ui dropdown item">
+          <i class="cogs icon"></i>
+          Parts
+          <div class="menu">
+            <a class="item" href="https://2019.igem.org/Team:Stony_Brook/Parts">Parts Overview</a>
+            <a class="item" href="https://2019.igem.org/Team:Stony_Brook/BasicParts">Basic Parts</a>
+          </div>
+        </div>
+        <a class="ui item" href="https://2019.igem.org/Team:Stony_Brook/Safety">
+          <i class="shield alternate icon"></i>
+          Safety
+        </a>
+        <div class="ui dropdown item">
+          <i class="globe icon"></i>
+          Human Practices
+          <div class="menu">
+            <a class="item" href="http://2019.igem.org/Team:Stony_Brook/Human_Practices">Integrated Human Practices</a>
+            <a class="item" href="http://2019.igem.org/Team:Stony_Brook/Public_Engagement">Education & Engagement</a>
+          </div>
+        </div>
+        <div class="ui dropdown item">
+          <i class="trophy icon"></i>
+          Awards
+          <div class="menu">
+            <a class="item" href="https://2019.igem.org/Team:Stony_Brook/Plant">Plant</a>
+            <a class="item" href="https://2019.igem.org/Team:Stony_Brook/Wiki">Wiki</a>
+          </div>
+        </div>
+        <div class="hamburger ">
+    	    <span class="hamburger-bun"></span>
+    	    <span class="hamburger-patty"></span>
+    	    <span class="hamburger-bun"></span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

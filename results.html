@@ -1,0 +1,253 @@
+{{Stony_Brook}}
+<html>
+  <head>
+    <style>
+      h1.ui.header {
+        padding: 2.5em 0em 1.5em;
+        font-size: 4em;
+      }
+
+      h2.ui.header {
+        padding: 0.5em 0em;
+        font-size: 1.5em;
+      }
+
+      #HQ_page p.black {
+        font-size: 1em;
+        color: #444444;
+      }
+      
+      .card {
+        box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+      }
+
+      th, td {
+        text-align: center !important;
+        vertical-align: middle !important;
+      }
+
+      .slideshow {
+        max-width: 100% !important;
+      }
+
+      img.slide {
+        width: 100%;
+      }
+
+      /* Mobile */
+      @media only screen and (min-width: 300px) and (max-width: 767px){
+        img.ui.image.section {
+          max-width: 40%;
+        }
+
+        #HQ_page p.black, li {
+          font-size: 1.2em;
+        }
+
+        div.ui.text.container {
+          padding-left: 2em;
+          padding-right: 2em;
+        }
+
+        table {
+          font-size: 1.2em !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <div class="ui fluid container" style="background-color: #05386b">
+      <div data-aos="zoom-out" data-aos-delay="0" class="ui center aligned container">
+        <h1 class="ui inverted header">
+          Results
+        </h1>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="ui text container" style="padding-bottom: 2.5em">
+      <h2 class="ui header">
+        Experimental Design
+      </h2>
+      <p class="black">
+        We designed our experiments to answer whether XRN1 would be effective in degrading TMV in plants. Our experimental hypothesis is that the plants with XRN1 and TMV would experience decreased fluorescence over a period of time, since our TMV is tagged with GFP. Therefore, our null hypothesis is that plants with XRN1 and TMV would not experience a change in fluorescence. To test this, each plant was placed in one of five groups. The possible groups were a pure control (only buffer), a control with just XRN1, a control with TMV and the N-gene (a known resistance gene that stops TMV, but results in necrosis in the plant), an experimental group with just TMV, and an experimental group with TMV and XRN1. For more information about our experiments, please visit our <a class="link" href="https://2019.igem.org/Team:Stony_Brook/Experiments">experiments page.</a>
+      </p>
+
+      <h2 class="ui header">Data Collection</h2>
+      <h3 class="ui header">Imaging</h3>
+      <p class="black">
+        Once the plants were separated into groups and inoculated, pictures of the plants were taken everyday for 4-6 consecutive days. These pictures (Figures 1a,1b) included using UV light to see the fluorescence of GFP due to the virus, and the label of the plants. To make sure the images were standardized, the plants were imaged in the same place, and the same lighting was used for each picture. We used a total of 47 plants across all our trials, with four weeks of images.
+      </p>
+
+      <div class="ui centered card" style="width:85%">
+        <div class="image">
+          <img class="ui centered image" src="https://2019.igem.org/wiki/images/4/4d/T--Stony_Brook--results-1.jpg">
+        </div>
+        <div class="content">
+          <div class="description">
+            <strong>Figure 1.</strong>  Examples of images taken for data processing. Figure 1a (left) shows the fluorescence on the leaves, while Figure 1b (right) shows the label to keep track of each plant.
+          </div>
+        </div>
+      </div>
+
+      <h3 class="ui header">Image Processing and Analysis</h3>
+      <p class="black">
+        Once all of the images were taken for a specific set of plants, they were analyzed using image processing tools that we developed in MATLAB. For more information, please visit our image processing and analysis section under our <a class="link" href="https://2019.igem.org/Team:Stony_Brook/Model">modeling page</a>. The images were analyzed for the percent of fluorescence on the leaves. All data points were compared with the pictures to make sure that the data points were reasonable (for example, control leaves with little fluorescence should have a small percent infected). Any outliers observed due to bugs in the program (for example, a control leaf with little fluorescence having a high percent infected) were marked and excluded from the statistical analysis.
+      </p>
+
+      <h3 class="ui header">Data Processing and Statistical Testing</h3>
+      <p class="black">
+        From these raw data points, the plants were categories based on their experimental group. For each data, the average of the intensities were taken for each plant in the group. A t-test was then performed between the TMV experimental group and the XRN1 + TMV experimental group.
+      </p>
+
+      <h2 class="ui header">Results</h2>
+      <p class="black">Figure 2 demonstrates our results using different dilutions of TMV. This was done to test if using too high a concentration of TMV would result in valid data due to the TMV spreading in the leaf too fast. As seen in Table 1, there was no significant difference in fluorescent intensity between the two dilutions of 1/10 and 1/100.</p>
+
+      <div class="ui centered card" style="width:100%">
+        <div class="image">
+          <img class="ui centered image" src="https://2019.igem.org/wiki/images/5/57/T--Stony_Brook--results-2.jpg">
+        </div>
+        <div class="content">
+          <div class="description">
+            <strong>Figure 2.</strong> Line chart of fluorescent intensity for a 1/100 dilution, and a 1/10 dilution.
+          </div>
+        </div>
+      </div>
+
+      <p class="black"><strong>Table 1</strong>: Parameters for our dilution experiments highlighted in Figure 2. Group refers to the specific dilution. Count refers to the number of days analyzed. Only the groups that were analyzed statistically are included in this table.</p>
+
+      <table class="ui striped table">
+        <thead>
+          <tr>
+            <th class="four wide">Group</th>
+            <th class="three wide">Count</th>
+            <th class="three wide">t-value</th>
+            <th class="three wide">df</th>
+            <th class="three wide">p-value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1/10 dilution</td>
+            <td>5</td>
+            <td rowspan="2">1.058</td>
+            <td rowspan="2">7</td>
+            <td rowspan="2">0.241</td>
+          </tr>
+
+          <tr>
+            <td>1/100 dilution</td>
+            <td>6</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="black">Figures 3a-c illustrates our experimental results for testing the results of XRN1 preventing TMV spread. As summarized by our p-values in Table 2, there was no significant difference in fluorescent intensity between just TMV and TMV with XRN1.</p>
+
+      <div class="ui centered card" style="width:100%">
+          <div class="slideshow">
+              <div class="slide6 fade">
+                <img class="slide" src="https://2019.igem.org/wiki/images/0/01/T--Stony_Brook--results-3.jpg">
+              </div>
+      
+              <div class="slide6 fade">
+                <img class="slide" src="https://2019.igem.org/wiki/images/8/83/T--Stony_Brook--results-4.jpg">
+              </div>
+      
+              <div class="slide6 fade">
+                <img class="slide" src="https://2019.igem.org/wiki/images/8/80/T--Stony_Brook--results-5.jpg">
+              </div>
+      
+              <a class="prev" onclick="plusSlides(-1, 5)">&#10094;</a>
+              <a class="next" onclick="plusSlides(1, 5)">&#10095;</a>
+            </div>
+            <br>
+      
+            <div style="text-align: center; margin-top: 1em; margin-bottom: 1em;">
+              <span class="dots6 computer" onclick="currentSlide(1, 5)"></span>
+              <span class="dots6 computer" onclick="currentSlide(2, 5)"></span>
+              <span class="dots6 computer" onclick="currentSlide(3, 5)"></span>
+            </div>
+        <div class="content">
+          <div class="description">
+            <strong>Figure 3.</strong> Line charts of our experimental trials. Each subfigure (a-left, b-middle, and c-right) depict a different batch of plants in the week.
+          </div>
+        </div>
+      </div>
+
+      <p class="black">Table 2: Parameters for our experimental trials highlighted in Figure 3. Group refers to the specific experimental group. Count refers to the number of days analyzed. Only the groups that were analyzed statistically are included in this table.
+      </p>
+
+      <table class="ui striped table">
+        <thead>
+          <tr>
+            <th class="two wide">Figure</th>
+            <th class="two wide">Group</th>
+            <th class="two wide">Count</th>
+            <th class="two wide">t-value</th>
+            <th class="two wide">df</th>
+            <th class="two wide">p-value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td rowspan="2">3a</td>
+            <td>TMV</td>
+            <td>4</td>
+            <td rowspan="2">-0.999</td>
+            <td rowspan="2">3</td>
+            <td rowspan="2">0.804</td>
+          </tr>
+
+          <tr>
+            <td>XRN1+TMV</td>
+            <td>3</td>
+          </tr>
+
+          <tr>
+            <td rowspan="2">3b</td>
+            <td>TMV</td>
+            <td>6</td>
+            <td rowspan="2">0.064</td>
+            <td rowspan="2">8</td>
+            <td rowspan="2">0.475</td>
+          </tr>
+
+          <tr>
+            <td>XRN1+TMV</td>
+            <td>6</td>
+          </tr>
+
+          <tr>
+              <td rowspan="2">3c</td>
+              <td>TMV</td>
+              <td>5</td>
+              <td rowspan="2">1.351</td>
+              <td rowspan="2">7</td>
+              <td rowspan="2">0.109</td>
+            </tr>
+  
+            <tr>
+              <td>XRN1+TMV</td>
+              <td>6</td>
+            </tr>
+        </tbody>
+      </table>
+
+      <h2 class="ui header">
+        Conclusions and Future Experiments
+      </h2>
+      <p class="black">Based on our analysis, we failed to reject the null hypothesis, which is that there is no significant difference between our two experimental groups. Based on our results, this could have arisen from a number of different factors, such as the levels of XRN1 not being sufficient enough to completely degrade TMV before it spreads, the plants refusing to take up XRN1 and produce it, or XRN1 not being able to degrade TMV biochemically. Future experiments in this research field could aim to answer these questions, and improve our knowledge about XRN1 and TMV interaction. For example, the mechanisms of both XRN1 degradation and TMV replication could be simulated in another environment to test whether XRN1 is a viable answer to TMV. Additionally, another XRN could be expressed, such as overexpressing XRN4 already found in <i>N. benthamiana</i>, or introducing another XRN from a closer relative (as explained in our phylogeny experiments) in plants, to see if <i>N. benthamiana</i> would be able to express it more readily. Finally, experiments could be done on the concentrations of XRN1 and TMV introduced in the plant system.</p>
+    </div>
+
+    <script type="text/javascript" src="https://2019.igem.org/wiki/index.php?title=Template:Stony_Brook/slideshow.js&action=raw&ctype=text/javascript"></script>
+    
+    <script>
+      AOS.init();
+    </script>
+
+  </body>
+</html>
+{{Stony_Brook/footer}}

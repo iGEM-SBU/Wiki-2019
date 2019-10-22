@@ -1,0 +1,146 @@
+{{Stony_Brook}}
+<html>
+  <head>
+    <style>
+      h1.ui.header {
+        padding: 2.5em 0em 1.5em;
+        margin: 0em !important;
+        font-size: 4em;
+      }
+
+      h2.ui.header {
+        padding: 0.5em 0em;
+        font-size: 1.5em;
+      }
+
+      #HQ_page p.black {
+        font-size: 1em;
+        color: #444444;
+      }
+
+      .anchor {
+        padding-top: 4em;
+        margin-top: -4em;
+      }
+
+			img.ui.image{
+				max-width: 80%;
+			}
+
+      img.slide {
+        width: 100%;
+      }
+
+      /* Mobile */
+      @media only screen and (min-width: 300px) and (max-width: 767px){
+        img.ui.image.section {
+          max-width: 40%;
+        }
+
+        #HQ_page p.black, li {
+          font-size: 1.2em;
+        }
+
+        div.ui.text.container {
+          padding-left: 2em;
+          padding-right: 2em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <div class="ui fluid container" style="background-color: #05386b">
+      <div data-aos="zoom-out" data-aos-delay="0" class="ui center aligned container">
+        <h1 class="ui inverted header">
+          Wiki
+        </h1>
+        <p style="padding: 0em 1em 1.5em">
+          Our team implemented various technologies into the wiki to make a website that was not only aesthetically pleasing, but also responsive and lightweight.
+        </p>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="ui text container" style="padding-bottom: 2.5em">
+      <!-- Design -->
+      <h2 class="ui header" style="margin-top: 1em">
+        Design
+      </h2>
+      <p class="black">
+        Before we started coding the wiki, we worked on the overall theme of the website and the design of each page. We used Google Slides to draft each page so that the design could easily be changed and to have a point of reference when we actually coded the design.
+      </p>
+
+      <div class="image">
+          <img class="ui centered image" src="https://2019.igem.org/wiki/images/thumb/5/5a/T--Stony_Brook--design-1.jpg/800px-T--Stony_Brook--design-1.jpg.png">
+      </div>
+
+      <!-- Collaboration -->
+      <h2 class="ui header" style="margin-top: 1em">
+        Collaboration
+      </h2>
+      <p class="black">
+        Since we had multiple people writing wiki pages at the same time, a good way to keep track of changes and store the code was needed. We hosted our source code on our <a class="link" href="https://github.com/iGEM-SBU">Github organization account</a> and used Git for a version-control system. This made wiki writing efficient and headache-free.
+      </p>
+
+      <div class="slideshow" style="max-width: 40%">
+				<div class="slide11 fade">
+          <img class="slide" src="https://2019.igem.org/wiki/images/e/e6/T--Stony_Brook--collab-1.jpg">
+        </div>
+
+        <div class="slide11 fade">
+          <img class="slide" src="https://2019.igem.org/wiki/images/6/6f/T--Stony_Brook--collab-2.jpg">
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1, 10)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1, 10)">&#10095;</a>
+      </div>
+      <br>
+
+      <div style="text-align: center">
+        <span class="dots11 computer" onclick="currentSlide(1, 10)"></span>
+        <span class="dots11 computer" onclick="currentSlide(2, 10)"></span>
+      </div>
+
+      <!-- Technology -->
+      <h2 class="ui header" style="margin-top: 1em">
+        Technology
+      </h2>
+      <p class="black">
+        We used <a class="link" href="https://semantic-ui.com/">Semantic UI</a> for our front-end development framework, which saved us time writing CSS and made it easy to design sleek and responsive web pages. We also made use of jQuery and <a class="link" href="https://michalsnik.github.io/aos/">AOS</a> (Animate On Scroll) library for animations on our site.
+      </p>
+
+      <div class="slideshow" style="max-width: 40%">
+				<div class="slide12 fade">
+          <img class="slide" src="https://2019.igem.org/wiki/images/9/9f/T--Stony_Brook--tech-1.jpg">
+        </div>
+
+        <div class="slide12 fade">
+          <img class="slide" src="https://2019.igem.org/wiki/images/c/c7/T--Stony_Brook--tech-2.jpg">
+        </div>
+
+        <div class="slide12 fade">
+          <img class="slide" src="https://2019.igem.org/wiki/images/a/a9/T--Stony_Brook--tech-3.jpg">
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1, 11)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1, 11)">&#10095;</a>
+      </div>
+      <br>
+
+      <div style="text-align: center">
+        <span class="dots12 computer" onclick="currentSlide(1, 11)"></span>
+        <span class="dots12 computer" onclick="currentSlide(2, 11)"></span>
+        <span class="dots12 computer" onclick="currentSlide(3, 11)"></span>
+      </div>
+
+    </div>
+    <script>
+      AOS.init();
+    </script>
+
+    <script type="text/javascript" src="https://2019.igem.org/wiki/index.php?title=Template:Stony_Brook/slideshow.js&action=raw&ctype=text/javascript"></script>
+
+  </body>
+</html>
+{{Stony_Brook/footer}}

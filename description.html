@@ -1,0 +1,256 @@
+{{Stony_Brook}}
+<html>
+  <head>
+    <style>
+      h1.ui.header {
+        padding: 2.5em 0em 1.5em;
+        font-size: 4em;
+      }
+
+      h2.ui.header {
+        padding: 0.5em 0em;
+        font-size: 1.5em;
+      }
+
+      #HQ_page p.black {
+        font-size: 1em;
+        color: #444444;
+      }
+
+      .ui.centered.card {
+        width: 67%;
+      }
+
+      .card {
+        box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+      }
+
+      .buttons {
+        text-align: center;
+        padding-bottom: 1.5em;
+      }
+
+      .ui.buttton {
+        font-size: 1.2em;
+        color: white;
+        background-color: #21ba45 !important;
+      }
+
+      /* Mobile */
+      @media only screen and (min-width: 300px) and (max-width: 767px){
+        img.ui.image.section {
+          max-width: 40%;
+        }
+
+        #HQ_page p.black, li {
+          font-size: 1.2em;
+        }
+
+        div.ui.text.container {
+          padding-left: 2em;
+          padding-right: 2em;
+        }
+
+        .ui.centered.card {
+          width: 100% !important;
+        }
+
+        div.description {
+          font-size: 1.3em !important;
+        }
+      }
+    </style>
+
+    <script>
+      full = () => {
+        document.getElementById("full").removeAttribute("hidden");
+        document.getElementById("elevator").setAttribute("hidden", true);
+      }
+
+      elevator = () => {
+        document.getElementById("full").setAttribute("hidden", "true");
+        document.getElementById("elevator").removeAttribute("hidden");
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Header -->
+    <div class="ui fluid container" style="background-color: #05386b">
+      <div data-aos="zoom-out" data-aos-delay="0" class="ui center aligned container">
+        <h1 class="ui inverted header">
+          Description
+        </h1>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="ui text container" style="padding-bottom: 2.5em">
+      <div class="buttons">
+        <button class="ui buttton" onclick="full()">Full Description</button>
+        <button class="ui buttton" onclick="elevator()">Elevator Pitch</button>
+      </div>
+
+      <div id="elevator" hidden>
+        <p class="black">
+          Despite being coined the Tobacco Mosaic Virus, TMV is known to infect over 350 different species of plants around the globe [1], threatening crop yields for dependant farmers.  Because the virus is spread between plants via pollinators such as bees, the preventative solution has been to use pesticides to avoid interaction between the bees and the affected crops. To alleviate the spread of TMV while simultaneously preserving environmental safety, we looked into expressing the yeast gene, XRN1 in plants.  By producing the protein XRN1-p, yeast has a means of breaking down non-local and invasive RNA [2], a system that the eukaryotic N. Benthamiana does not have. Ultimately, by expressing the yeast gene in our tobacco plants, we hope to both test whether it would successfully breakdown the viral RNA while also exploring whether yeast gene expression in plants is viable.
+        </p>
+
+        <h2>
+          References
+        </h2>
+
+        <p class="black">
+          <ol>
+              <li>Moorman, Gary W. “Tobacco Mosaic Virus (TMV).” Penn State Extension, 16 Aug. 2019, https://extension.psu.edu/tobacco-mosaic-virus-tmv.</li><br>
+
+              <li>Rowley, Paul A, et al. “XRN1 Is a Species-Specific Virus Restriction Factor in Yeasts.” PLoS Pathogens, Public Library of Science, 6 Oct. 2016, https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5053509/.</li><br>
+          </ol>
+        </p>
+      </div>
+
+      <div id="full">
+      <h2 class="ui header">
+        The Problem
+      </h2>
+
+      <div class="ui centered card">
+        <div class="image">
+          <img class="ui centered image" src="https://2019.igem.org/wiki/images/d/db/T--Stony_Brook--problem-1.jpg">
+        </div>
+        <div class="content">
+          <div class="description">
+            <strong>Figure 1.</strong> Chain reaction of pesticide use for the surrounding environment [2].
+          </div>
+        </div>
+      </div>
+
+      <p class="black">
+        For years, farmers have had to deal with the consequences of decreased crop yields that result from the spread of plant viruses. As a solution to this they have been using pesticides to prevent insects from spreading the diseases to their crops, However, pesticides are harmful to both the environment and humans. <br><br>
+
+Some negative consequences associated with the use of pesticides are the unnecessary killing of the bee populations and the contamination of fresh water resulting from the movement of the pesticides into the groundwater.  Any pesticide-human contact can result in a series of health problems, ranging from respiratory issues, all the way to cancer. These same damaging effects can also impact surrounding wildlife with its carcinogenic properties [1]. <br><br>
+
+Although its impact on human life is most magnified, the impact it has on bee populations is equally as concerning.  Bees are overwhelmingly important in crop cycles, as they are the main source of pollination for all farmers.  Because pesticides indirectly kill the bees, farmers are making a choice between killing their crop yield via disease, or killing it because of a lack of pollination.  Either way, crop yields are not nearly maximized [3].
+
+      </p>
+
+      <h2 class="ui header">
+        Tobacco Mosaic Virus
+      </h2>
+      <p class="black">
+        The virus that we decided to try to tackle using synthetic biology is known as TMV, or the Tobacco Mosaic Virus.  Despite its name, the virus directly impacts several other important crop groups such as tomatoes.  The name accurately reflects the visible effects that it has on its victims; the virus infects the plant via an abrasion to a leaf, and spreads through the plasmodesmata into the surrounding plant cells.  As the TMV spreads, plant cells die in an inconsistent, checker-like pattern that resembles a mosaic tile.  This checker like pattern is known as mottling, and it appears on the leaf as dark green and yellow spots.  After the leaves have been infected, the virus simultaneously spreads from the leaves through the rest of the plant through the stem.
+      </p>
+
+      <div class="ui centered card" style="width:85%">
+        <div class="image">
+          <img class="ui centered image" src="https://2019.igem.org/wiki/images/7/7c/T--Stony_Brook--problem-2.jpg">
+        </div>
+        <div class="content">
+          <div class="description">
+            <strong>Figure 2.</strong> Spread of TMV from the plant of original infected tobacco cell to the adjacent cell.
+          </div>
+        </div>
+      </div>
+
+      <p class="black">
+        To monitor TMV spread, GFP can be attached to the virus, allowing researchers to more accurately track the movement of the virus, and the infection of affected plant cells.  Using ultraviolet light, the residual pathway of the virus can be visualized more easily from the original point of infection, through the surrounding cells, to the stem, and then to the other leaves.  The virus directly prevents the functionality of the chlorophyll via the protein complexes the virus makes in the plant.  As a result, the chlorophyll is unable to convert resources to glucose, which lowers the energy of the plant, stunting both its growth, and preventing it from attaining the necessary nutrients [4].
+      </p>
+
+      <h2 class="ui header">
+        RNA Interference is Ineffective
+      </h2>
+      <p class="black">
+        RNA interference(RNAi) was the initial defence mechanism of plants against these viruses. RNAi works by using short interfering RNA(siRNA). SiRNA attaches to the mRNA that needs to be destroyed and calls over the RNA-Induced Silencing Complex (RISC) which cleaves the target mRNA into many pieces, making it useless to the cell and therefore decreasing the expression of the protein that the target mRNA coded for.
+      </p>
+
+      <div class="ui centered card">
+        <div class="image">
+          <img class="ui centered image" src="https://2019.igem.org/wiki/images/6/6e/T--Stony_Brook--problem-3.jpg">
+        </div>
+        <div class="content">
+          <div class="description">
+            <strong>Figure 3.</strong> RNA induced silencing complex actively breaks down the non local RNA [5]
+          </div>
+        </div>
+      </div>
+
+      <p class="black">
+        Much like other organisms, when presented with a preventative measure, TMV adapted.  To avoid the issues involved with the RNA interference, TMV uses a process known as the RNA silencing suppressor p19 which actively sequester RNA such as XRN1 by binding to double stranded RNA, preventing interactions with RISC as siRNA [7].
+      </p>
+
+      <h2 class="ui header">
+        What is XRN1?
+      </h2>
+      <p class="black">
+        XRN1 is an exoribonuclease which is used to degrade mRNA in eukaryotic cells in the 5’ to 3’ direction. Typically XRN1 degrades RNA that doesn’t have the 5’ cap or the poly(A) tail, which is characteristic of most viruses. It is very efficient against the L-A toti virus, which attacks yeast. Saccharomyces Cerevisiae XRN1p has coevolved with the toti viruses in order to give it more antiviral properties [6].<br><br>
+
+Because of its ability to breakdown non-local RNA, XRN1, and its associated protein complex, XRN1-p was considered as a possible solution to the TMV problem we sought to solve.  It is important to note, however, that XRN1 is not found in Nicotiana benthiama.  Additionally, XRN1 is only known to breakdown uncapped RNA.  TMV, however, is very well known to be a capped RNA complex.  For this reason, there was some initial doubt to our project’s viability.<br><br>
+
+In more detail, it is important to understand how XRN1 functions in yeast.  For mRNA degradation, first the poly(A) tail and the 5’ caps need to be taken off of the mRNA and then only can the RNA can be completely degraded.  Once the tail is removed, the viral protein, XRN1-p can breakdown the actual mRNA code from the aforementioned 5’ to 3’.
+
+      </p>
+
+      <div class="ui centered card">
+        <div class="image">
+          <img class="ui centered image" src="https://2019.igem.org/wiki/images/9/96/T--Stony_Brook--problem-4.jpg">
+        </div>
+        <div class="content">
+          <div class="description">
+            <strong>Figure 4.</strong> XRN1 and its associated protein, XRN1p actively breaking down uncapped non-local RNA [8]
+          </div>
+        </div>
+      </div>
+
+      <h2 class="ui header">
+        Our Solution
+      </h2>
+      <p class="black">
+        To solve the problem of excessive pesticide use, our team wants to target the viral RNA that infects the plants rather than the vectors which carry it to the plant. Our plan is to take XRN1, an exoribonuclease often found in yeast which cleaves RNA, into plants in hopes that it will degrade the viral RNA that causes the tobacco mosaic virus (TMV).
+      </p>
+
+      <h2 class="ui header">
+        How are we doing it?
+      </h2>
+      <p class="black">
+        In order to put XRN1p into plants, a plasmid with XRN1, and mCherry. The mCherry is a red fluorescent protein that will help us visualize XRN1p in plants. E.coli is the first vector for the plasmid in order to replicate and make many copies of the plasmid. The second vector is agrobacterium which is used to put the plasmid into the plants. The specific strain of plant that we are using is <i>Nicotiana benthamiana</i>, which can uptake plasmids through agroinfiltration. <br><br>
+
+The simplified procedure for how we went about this experiment was to first transform the initial plasmid containing the XRN1 gene into the <i>E. coli</i> using heat-shock methods.  Once the transformation was complete, we grew colonies of the transformed <i>E. coli</i> on an antibiotic specific plate (ampicillin for our experiments).  Once we got growth, we liquid inoculated the <i>E. coli</i> with the XRN1 in them and once again transformed, this time into agrobacterium, which best allows transformation from prokaryotes to eukaryotes.  However, in this case, we used a freeze-thaw method for transformation. <br><br>
+
+Once the transformation was complete, and colonies were grown on antibiotic specific plates, we liquid inoculated our transformed agrobacterium, and agro-infiltrated the plasmid into the tobacco leaves.  This method involves creating a small hole into the leaf (not all the way through) and then injecting a buffer-liquid inoculation mixture into the leaf.  Because agrobacterium can simply infect the plant and insert its genetic material into the tobacco cells, the transformation from the initial <i>E. coli</i> to the <i>N. benthamiana</i> was complete. <br><br>
+
+In parallel, the plants are also infected with the Tobacco Mosaic Virus (TMV), which has a green fluorescence protein attached.  In the plants, we should see green fluorescence indicating where the TMV has spread and red fluorescence indicating where XRN1 has been expressed within the plant.
+
+      </p>
+
+      <h2>
+        References
+      </h2>
+      <p class="black">
+        <ol>
+          <li>Allan, Rochelle. “Pesticides.” Home, https://chemistrypublicawarenesscampaign.weebly.com/pesticides.html.</li><br>
+
+          <li>Eddy-Miller, Cheryl A, and Suzanne C. Roberts. Pesticides in Ground Water - Laramie County, Wyoming, 1998-99. U.S. Geological Survey, Mar. 2000, https://pubs.usgs.gov/fs/fs03400/fs03400.pdf.</li><br>
+
+          <li>Ellis, Steve. “Bees in Crisis.” Pesticide Action Network, https://www.panna.org/food-farming-derailed/bees-crisis.</li><br>
+
+          <li>Moorman, Gary W. “Tobacco Mosaic Virus (TMV).” Penn State Extension, 16 Aug. 2019, https://extension.psu.edu/tobacco-mosaic-virus-tmv.</li><br>
+
+          <li>Robinson, Richard. “RNAi Therapeutics: How Likely, How Soon?” PLOS Biology, Public Library of Science, 20 Jan. 2004, https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.0020028.</li><br>
+
+          <li>Rowley, Paul A, et al. “XRN1 Is a Species-Specific Virus Restriction Factor in Yeasts.” PLoS Pathogens, Public Library of Science, 6 Oct. 2016, https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5053509/.</li><br>
+
+          <li>SIB Swiss Institute of Bioinformatics. “Suppressor of RNA Silencing.” SIB Swiss Institute of Bioinformatics |  Disclaimer, https://viralzone.expasy.org/891?outline=all_by_protein.</li><br>
+
+          <li>Pashler, Amy L., et al. “The Roles of the Exoribonucleases DIS3L2 and XRN1 in Human Disease.” Biochemical Society Transactions, Portland Press Limited, 15 Oct. 2016, http://www.biochemsoctrans.org/content/44/5/1377.</li>
+        </ol>
+      </p>
+      </div>
+    </div>
+
+    <script>
+      AOS.init();
+    </script>
+
+  </body>
+</html>
+{{Stony_Brook/footer}}
